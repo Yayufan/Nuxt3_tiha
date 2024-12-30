@@ -45,7 +45,7 @@ export default defineNuxtConfig({
       //引入第三方外部JS可能會用到
       script: [
         {
-          src: 'https://cse.google.com/cse.js?cx=93296d208c72f464b',
+          src: 'https://cse.google.com/cse.js?cx=8544ee30e36a04454',
           async: true
         }
         // <script src="https://myawesome-lib.js"></script>  如果你像引入這個
