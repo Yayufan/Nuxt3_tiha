@@ -73,7 +73,7 @@ const closeMenu = () => {
 
 const menuItem = [
     {
-        title: '加入我們',
+        title: '關於我們',
         subMenu: [
             {
                 title: '宗旨任務',

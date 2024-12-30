@@ -8,7 +8,7 @@
                 <nuxt-link :to="'/'"><img ref="" class="logo" src="@/assets/img/logo.png" alt="logo"></nuxt-link>
             </el-menu-item>
             <el-sub-menu index="1">
-                <template #title class="firstTitle">加入我們</template>
+                <template #title class="firstTitle">關於我們</template>
                 <nuxt-link :to="'/purpose'"><el-menu-item index="purpose">宗旨任務</el-menu-item></nuxt-link>
                 <nuxt-link :to="'/become-member'"><el-menu-item index="become-member">加入會員</el-menu-item></nuxt-link>
                 <nuxt-link :to="'/association-chronology'"> <el-menu-item
@@ -25,7 +25,7 @@
                 <nuxt-link :to="'/news'"><el-menu-item index="news">最新消息</el-menu-item></nuxt-link>
                 <nuxt-link :to="'/event-highlights'"><el-menu-item
                         index="event-highlights">活動花絮</el-menu-item></nuxt-link>
-                <nuxt-link :to="'/cooperation'"><el-menu-item index="cooperation">合作申請單</el-menu-item></nuxt-link>
+                <!-- <nuxt-link :to="'/cooperation'"><el-menu-item index="cooperation">合作申請單</el-menu-item></nuxt-link> -->
             </el-sub-menu>
             <el-sub-menu index="3">
                 <template #title>認識器捐</template>
