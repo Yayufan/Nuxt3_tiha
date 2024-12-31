@@ -5,11 +5,11 @@
 
 
 
-        <Breadcrumbs firstRoute="認識器捐" secoundRoute="器捐學堂"></Breadcrumbs>
+        <Breadcrumbs firstRoute="衛教資訊" secoundRoute="案例分享"></Breadcrumbs>
 
         <section class="common-section">
 
-            <h1 class="common-title">器捐學堂</h1>
+            <h1 class="common-title">案例分享</h1>
 
             <div class="content-box">
 
@@ -18,6 +18,22 @@
                     <article class="article-item" v-for="(item, index) in articleList.records " :key="item.articleId">
 
                         <nuxt-link class="article-item-link"
+                            :to="item.path">
+
+                            <div class="article-img-box">
+                                <img class="article-img" src="@/assets/img/cta-img-1.jpg">
+                            </div>
+
+                            <div class="article-info-box">
+                                <h2 class="article-title">{{ item.title }}</h2>
+                                <p class="article-description">
+                                    {{ item.description }}
+                                </p>
+                            </div>
+                        </nuxt-link>
+
+
+                        <!-- <nuxt-link class="article-item-link"
                             :to="{ name: 'organ-donation-id', params: { id: item.articleId } }">
 
                             <div class="article-img-box">
@@ -30,7 +46,7 @@
                                     {{ item.description }}
                                 </p>
                             </div>
-                        </nuxt-link>
+                        </nuxt-link> -->
 
                     </article>
 
@@ -60,6 +76,31 @@
 import { ref, reactive } from 'vue'
 import Breadcrumbs from '@/components/layout/Breadcrumbs.vue'
 
+let articleList = reactive({
+    pages: 1,
+    size: 4,
+    records: [
+        {
+            articleId: '01',
+            title: '腸道發炎性疾病，能不能生小孩？_章振旺醫師',
+            description: '病房的住院醫師在護理站叫住我，表示24A的林小姐想轉照顧的主治醫師改成我? 一問之下才知道，原來是我的老病人...',
+            coverThumbnailUrl: '',
+            path:'/article01'
+        },
+        {
+            articleId: '02',
+            title: '重拾設計夢—生物製劑助克隆氏症合併廔管患者回歸幸福生活＿李柏賢醫師',
+            description: '32歲的室內設計師小安因右下腹疼痛、血便、反覆泌尿道感染及體重減輕八公斤，過去一年多來多次就醫卻未見改善，甚至被迫辭去工作...',
+            coverThumbnailUrl: '',
+            path:'/article02'
+        }
+    ]
+})
+
+//設定分頁組件,currentPage當前頁數
+let currentPage = ref(articleList.pages)
+
+/** 
 
 //根據裝置預設顯示數量
 // const defaultSize = ref(useState('currentSize', () => useIsMobile().value ? 8 : 8))
@@ -125,6 +166,7 @@ watch(currentPage, (value, oldValue) => {
 
 })
 
+*/
 
 
 </script>
@@ -163,7 +205,8 @@ watch(currentPage, (value, oldValue) => {
 
         .article-item {
             margin-bottom: 5%;
-            width: 29%;
+            // width: 29%;  之後再打開  
+            width: 40%;
             padding: 1rem 1rem;
             transition: 0.5s;
 
