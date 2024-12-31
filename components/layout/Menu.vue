@@ -25,12 +25,13 @@
 
             <el-sub-menu index="3">
                 <template #title>衛教資訊</template>
-                <!-- <nuxt-link to="/organ-donation"><el-menu-item index="organ-donation">器捐學堂</el-menu-item></nuxt-link>
-                <nuxt-link to="/journal"><el-menu-item index="journal">器捐捐贈會刊</el-menu-item></nuxt-link>
+                 <nuxt-link to="/case-sharing"><el-menu-item index="case-sharing">案例分享</el-menu-item></nuxt-link>
+                
+                 <!-- <nuxt-link to="/journal"><el-menu-item index="journal">器捐捐贈會刊</el-menu-item></nuxt-link>
                 <nuxt-link to="/video-area"><el-menu-item index="video-area">影音專區</el-menu-item></nuxt-link>
                 <nuxt-link to="/brochure-download">
                     <el-menu-item index="brochure-download">文宣下載</el-menu-item>
-                </nuxt-link> -->
+                </nuxt-link>  -->
 
 
             </el-sub-menu>

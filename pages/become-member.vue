@@ -7,8 +7,6 @@
 
         <section class="common-section">
 
-
-
             <h1 class="common-title">加入會員</h1>
 
             <div class="content-box">
