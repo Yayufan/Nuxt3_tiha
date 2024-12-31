@@ -1,6 +1,6 @@
 <template>
     <footer class="footer-box">
-        <div class="footer-info">
+        <!-- <div class="footer-info">
             <div class="footer-item1">
                 <div class="info-box">
                     <p class="info-content association-name">社團法人中華民國器官捐贈協會</p>
@@ -35,9 +35,9 @@
                         updateDate }}</span></p>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright © 2024 社團法人中華民國器官捐贈協會.All Rights Reserved</p>
+        </div> -->
+        <div class="copyright" style="margin-top: 5%;" >
+            <p>Copyright © 2024 台灣腸保健康協會.All Rights Reserved</p>
         </div>
     </footer>
 </template>

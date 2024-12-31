@@ -16,11 +16,10 @@
                 <article class="paragraph purpose-box">
                     <h2 class="sub-title">宗旨</h2>
                     <p class="content">
-                        現代移植醫學的進步已可挽救器官衰竭病患的生命，且提昇患者的生命品質，然而器官捐贈來源的短缺，
+                        為了全國與腸道疾病及發炎性腸道疾病搏鬥的病友們提供支持、資源和共享經驗的平台，
                         <br>
-                        乃成為器官移植手術無法救人無數的阻礙，為協助醫療服務，提倡尊重生命理念，造福民眾的健康，特於
+                        並提供病友了解發炎性腸道疾病及腸道疾病的相關知識，並促進病友之間的交流與互助為宗旨。
                         <br>
-                        民國82年8月28日正式成立「社團法人中華民國器官捐贈協會」。
                     </p>
                 </article>
 
@@ -28,21 +27,22 @@
                 <article class="paragraph mission-box">
                     <h2 class="sub-title">任務</h2>
                     <ol class="content">
-                        <li>促進一般民眾對器官捐贈的認知及參與。</li>
-                        <li>提供醫護專業人員器官捐贈推廣之合作。</li>
-                        <li>監督及協助宣導政府制定之有關器官捐贈與移植之法令。</li>
-                        <li>器官捐贈者家屬之悲傷輔導與陪伴。</li>
+                        <li>教育與資訊傳播：提供最新的疾病相關資訊和治療方法，以及舉辦教育講座和工作坊等。</li>
+                        <li>病友支持：為患有腸道疾病和發炎性腸道疾病的患者及其家屬提供互助平台，分享經驗和資訊。</li>
+                        <li>協助病友提升生活品質：提供飲食和營養建議，以及組織康復和運動活動等。</li>
+                        <li>資源整合：整合各方資源，為病友提供全面支持。</li>
+                        <li>提供就醫指引和建議：協助病友獲得適當的醫療資源，提供就醫指引和建議。</li>
                     </ol>
                 </article>
 
-                <article class="paragraph ">
+                <!-- <article class="paragraph ">
                     <h2 class="sub-title">組織架構</h2>
                     <div class="content organizational-structure-box ">
                         <img src="@/assets/img/organizational-chart.png">
                     </div>
-                </article>
+                </article> -->
 
-                <article class="paragraph ">
+                <!-- <article class="paragraph ">
                     <h2 class="sub-title">歷屆理監事</h2>
                     <div class=" supervisors-box ">
 
@@ -83,16 +83,16 @@
                         <button v-else class="supervisors-more-btn" @click="getOtherList"> 收起更多 </button>
                     </div>
 
-                </article>
+                </article> -->
 
-                <article class="paragraph ">
+                <!-- <article class="paragraph ">
                     <h2 class="sub-title">協會章程</h2>
                     <div class="content regulation-box">
                         <a class="download-link" href="/files/regulation_1071005.pdf"
                             target="_blank">社團法人章程-1071005修正版.pdf</a>
                     </div>
 
-                </article>
+                </article> -->
 
             </div>
 

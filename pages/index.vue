@@ -12,12 +12,48 @@
             </el-carousel-item>
         </el-carousel> -->
 
-        
-        <div class="main-visual-box" >
-            <img src="@/assets/img/carousel-item1.jpg" >
+
+        <div class="main-visual-box">
+            <img src="@/assets/img/carousel-item1.jpg">
         </div>
 
-    
+        <div class="join-us-board">
+            <p class="title">快速連結</p>
+            <div class="icon-link-box">
+                <div class="link-item">
+                    <nuxt-link to="">
+                        <img src="@/assets/img/purpose-icon.png" alt="">
+                    </nuxt-link>
+                    <p>最新消息</p>
+                </div>
+                <div class="link-item">
+                    <nuxt-link to="">
+                        <img src="@/assets/img/become-member-icon.png" alt="">
+                    </nuxt-link>
+                    <p>衛教資訊</p>
+                </div>
+                <div class="link-item">
+                    <nuxt-link to="">
+                        <img src="@/assets/img/association-chronology-icon.png" alt="">
+                    </nuxt-link>
+                    <p>線上捐款</p>
+                </div>
+                <div class="link-item">
+                    <nuxt-link to="">
+                        <img src="@/assets/img/achievements-icon.png" alt="">
+                    </nuxt-link>
+                    <p>關於我們</p>
+                </div>
+                <div class="link-item">
+                    <nuxt-link to="">
+                        <img src="@/assets/img/family-support-icon.png" alt="">
+                    </nuxt-link>
+                    <p>加入會員</p>
+                </div>
+            </div>
+        </div>
+
+
     </main>
 </template>
 
@@ -99,11 +135,12 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
         }
     }
 
-    .main-visual-box{
+    .main-visual-box {
         margin: 3% 0;
         text-align: center;
-        img{
-            max-width: 900px;
+
+        img {
+            max-width: 80%;
             width: 100%;
         }
     }
@@ -112,9 +149,9 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
 
     .join-us-board {
         width: 100%;
-        margin-top: 5%;
         justify-content: center;
-
+        margin-top: 3%;
+        margin-bottom: 3%;
 
         .title {
             margin-left: 10%;
@@ -148,7 +185,7 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
                 // width: 100%;
                 p {
                     color: #91715F;
-                    font-size: 1rem;
+                    font-size: $paragraph-font-size;
                     text-align: center;
                 }
             }
@@ -158,6 +195,7 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
                 transition: 0.5s;
 
                 &:hover {
+                    cursor: pointer;
                     transform: scale(1.1);
                 }
             }
