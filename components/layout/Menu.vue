@@ -52,7 +52,7 @@
             </el-sub-menu>
             <el-sub-menu index="6">
                 <template #title>加入會員</template>
-                <nuxt-link to=""><el-menu-item index="sign-online">會員註冊</el-menu-item></nuxt-link>
+                <nuxt-link to="/registration"><el-menu-item index="sign-online">會員註冊</el-menu-item></nuxt-link>
                 <nuxt-link to=""><el-menu-item index="cancel-donation">會員登入</el-menu-item></nuxt-link>
             </el-sub-menu>
         </el-menu>

@@ -79,68 +79,45 @@ const menuItem = [
                 title: '宗旨任務',
                 link: '/purpose'
             },
-            {
-                title: '加入會員',
-                link: '/become-member'
-            },
-            {
-                title: '協會年表',
-                link: '/association-chronology'
-            },
-            {
-                title: '歷年成果(簽卡分析)',
-                link: '/achievements'
-            },
-            {
-                title: '臉書粉絲團',
-                link: 'https://www.facebook.com/organassociation/'
-            },
         ]
     },
     {
         title: '訊息看板',
         subMenu: [
-            { title: '最新消息', link: 'news' },
-            { title: '活動花絮', link: '/event-highlights' },
-            { title: '合作申請單', link: '/cooperation' }
+            { title: '最新消息', link: '' },
+            { title: '活動花絮', link: '' },
+            // { title: '合作申請單', link: '/cooperation' }
         ]
     },
     {
-        title: '認識器捐',
+        title: '衛教資訊',
         subMenu: [
-            { title: '器捐學堂', link: '/organ-donation' },
-            { title: '器捐捐贈會刊', link: '/journal' },
-            { title: '影音專區', link: '/video-area' },
-            { title: '文宣下載', link: '/brochure-download' },
-            { title: '器捐生命故事:捐贈者家屬篇', link: '/story-donor-family' },
-            { title: '器捐生命故事:受贈者篇', link: '/story-recipient' },
-            { title: '白袍心聲', link: '/doctor-voice' },
-            { title: '法令規章', link: '/laws' }
+            // { title: '器捐學堂', link: '/organ-donation' },
+            // { title: '器捐捐贈會刊', link: '/journal' },
+            // { title: '影音專區', link: '/video-area' },
+            // { title: '文宣下載', link: '/brochure-download' },
         ]
     },
     {
-        title: '家屬關懷',
+        title: '影音專區',
         subMenu: [
-            { title: '協助資源', link: '/assistance-resources' },
-            { title: '好書推薦', link: '/book-recommendations' },
-            { title: '社工專欄', link: '/social-work-column' },
-            { title: '家屬資料填寫', link: 'https://docs.google.com/forms/d/e/1FAIpQLScxrl0on7gvcaTYTI9knEgy0-dwGHhT7SeJfS183B8g811QHQ/viewform' },
-            { title: '如果你要懷念我', link: '/miss-me' }
+            // { title: '協助資源', link: '/assistance-resources' },
+            // { title: '好書推薦', link: '/book-recommendations' },
+
         ]
     },
     {
-        title: '捐款贊助',
+        title: '捐款資訊',
         subMenu: [
-            { title: '捐款支持-立即行動', link: '/donate' },
-            { title: '版畫有限量，愛心無限亮', link: '/charity-sale' }
+            // { title: '捐款支持-立即行動', link: '/donate' },
+            // { title: '版畫有限量，愛心無限亮', link: '/charity-sale' }
         ]
     },
     {
-        title: '簽署器捐',
+        title: '加入會員',
         subMenu: [
-            { title: '線上簽署', link: '/sign-online' },
-            { title: '簽卡停看聽', link: '/frequently-asked-questions' },
-            { title: '撤銷簽署', link: '/cancel-donation' }
+            { title: '會員註冊', link: '/registration' },
+            { title: '會員登入', link: '' },
         ]
     }
 ]

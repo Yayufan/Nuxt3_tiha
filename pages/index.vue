@@ -45,7 +45,7 @@
                     <p>關於我們</p>
                 </div>
                 <div class="link-item">
-                    <nuxt-link to="">
+                    <nuxt-link to="/registration">
                         <img src="@/assets/img/family-support-icon.png" alt="">
                     </nuxt-link>
                     <p>加入會員</p>
