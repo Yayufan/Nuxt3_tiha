@@ -1,18 +1,18 @@
-<template>
-    <div>
-        <Breadcrumbs firstRoute="加入會員" secoundRoute="會員註冊"></Breadcrumbs>
-        <div class="common-section">
-            <h1 class="common-title">加入會員</h1>
+    <template>
+        <div>
+            <Breadcrumbs firstRoute="加入會員" secoundRoute="會員註冊"></Breadcrumbs>
+            <div class="common-section">
+                <h1 class="common-title">加入會員</h1>
 
-            <div class="content-box">
-                <p class="title">須知事項</p>
-                <div class="statement">
-                    <p>
-                        親愛的朋友您好，歡迎你一起加入腸保健康，一起攜手打造一個溫暖、包容的社群。
-                        無論您是自身受影響還是關心他人的支持者，您的參與將是我們團體的寶貴貢獻，請詳閱以下說明事項及流程：
+                <div class="content-box">
+                    <p class="title">須知事項</p>
+                    <div class="statement">
+                        <p>
+                            親愛的朋友您好，歡迎你一起加入腸保健康，一起攜手打造一個溫暖、包容的社群。
+                            無論您是自身受影響還是關心他人的支持者，您的參與將是我們團體的寶貴貢獻，請詳閱以下說明事項及流程：
 
                         <ul>
-                            <li>【入會辦法】年滿二十歲贊同本會宗旨之投入熱忱者 ，填妥註冊資料，經理事會審查通過經理事會審查通過，
+                            <li>【入會辦法】年滿十八歲贊同本會宗旨之投入熱忱者 ，填妥註冊資料，經理事會審查通過經理事會審查通過，
                                 並繳納會費後即為個人會員。
                             </li>
 
@@ -23,136 +23,78 @@
                                 【繳費方式】郵政劃撥繳費（恕不接受其他方式繳納，敬請見諒）。
                             </li>
                         </ul>
-                    </p>
-                </div>
-            </div>
-
-            <!-- <div class="form-section">
-                <p class="notice">(以下欄位有<span>*</span>標示者為必填)</p>
-                <el-form ref="ruleFormRef" class="form" :model="form" :rules="formRules" label-position="left">
-                    <el-form-item label="簽署人：" label-width="270" prop="name" class="form-item1">
-                        <el-input v-model="form.name" type="text"></el-input>
-                    </el-form-item>
-                    <el-form-item label="國民身分證統一編號：" prop="idCard" label-width="270" class="form-item1">
-                        <el-input v-model="form.idCard" type="text"></el-input>
-                    </el-form-item>
-                    <el-form-item label="出生日期：" label-width="270" prop="birthday" class="form-item1">
-                        <el-date-picker v-model="form.birthday" type="date" value-format="YYYY-MM-DD"></el-date-picker>
-                    </el-form-item>
-                    <el-form-item label="連絡電話：" label-width="270" prop="contactNumber" class="form-item1">
-                        <el-input v-model="form.contactNumber" type="tel"></el-input>
-                    </el-form-item>
-                    <el-form-item label="手機號碼：" label-width="270" prop="phoneNumber" class="form-item1">
-                        <el-input v-model="form.phoneNumber" type="tel"></el-input>
-                    </el-form-item>
-                    <el-form-item label="E-Mail：" label-width="250" prop="email" class="unnecessary email">
-                        <el-input class="email-input" v-model="form.email" type="email"></el-input>
-                    </el-form-item>
-                    <el-form-item label="聯絡地址：" label-width="270" prop="address" class="form-item1 address">
-                        <el-input v-model="form.address" type="text"></el-input>
-                    </el-form-item>
-                    <el-form-item label="法定代理人姓名：" label-width="270" prop="legalRepresentativeName" class="form-item1">
-                        <el-input v-model="form.legalRepresentativeName" type="text"></el-input>
-                    </el-form-item>
-                    <el-form-item label="法定代理人國民身分證統一編號：" class="legal-representative-ID"
-                        prop="legalRepresentativeIdCard">
-                        <el-input v-model="form.legalRepresentativeIdCard" type="text"></el-input>
-                    </el-form-item>
-                    <el-form-item label="本人獲得器官捐贈同意卡：" class="unnecessary form-item1 consent-card">
-                        <el-radio-group v-model="form.consentCard">
-                            <el-radio label="希望" value="1"></el-radio>
-                            <el-radio label="不希望" value="-1"></el-radio>
-                        </el-radio-group>
-                    </el-form-item>
-                    <div class="text-area">
-                        <el-form-item class="reason unnecessary" label="簽署的原因：" label-width="auto">
-                            <el-input v-model="form.reason" type="textarea" rows="6"></el-input>
-                        </el-form-item>
-                        <el-form-item class="word-to-family unnecessary" label="給家人的話：" label-width="auto">
-                            <el-input v-model="form.wordToFamily" type="textarea" rows="6"></el-input>
-                        </el-form-item>
+                        </p>
                     </div>
-                    <el-form-item class="donate-organs unnecessary" label="願意捐贈器官/組織項目(可複選)" prop="donateOrgans">
-                        <el-checkbox-group v-model="form.donateOrgans">
-                            <div class="checkbox-div">
-                                <el-checkbox label="全部捐贈" value="all"></el-checkbox>
-                                <el-checkbox label="肺臟" value="lung"></el-checkbox>
-                                <el-checkbox label="胰臟" value="pancreas"></el-checkbox>
-                                <el-checkbox label="小腸" value="smallIntestine"></el-checkbox>
-                            </div>
-                            <div class="checkbox-div">
-                                <el-checkbox label="皮膚" value="skin"></el-checkbox>
-                                <el-checkbox label="心瓣膜" value="heartValve"></el-checkbox>
-                                <el-checkbox label="心臟" value="heart"></el-checkbox>
-                                <el-checkbox label="肝臟" value="liver"></el-checkbox>
-                            </div>
-                            <div class="checkbox-div">
-                                <el-checkbox label="腎臟" value="kidney"></el-checkbox>
-                                <el-checkbox label="眼角膜" value="cornea"></el-checkbox>
-                                <el-checkbox label="骨骼" value="bones"></el-checkbox>
-                                <el-checkbox label="血管" value="bloodVessels"></el-checkbox>
-                            </div>
-                        </el-checkbox-group>
-                    </el-form-item>
-                    <div class="instructions-div">
+                </div>
+
+                <div class="form-section">
+                    <p class="notice">(以下欄位有<span>*</span>標示者為必填)</p>
+                    <el-form ref="ruleFormRef" class="form" :model="form" :rules="formRules" label-position="top">
+                        <el-form-item label="申請人 :" label-width="270" prop="name" class="form-item1">
+                            <el-input v-model="form.name" type="text"></el-input>
+                        </el-form-item>
+                        <el-form-item label="出生日期：" label-width="270" prop="birthday" class="form-item1">
+                            <el-date-picker v-model="form.birthday" type="date"
+                                value-format="YYYY-MM-DD"></el-date-picker>
+                        </el-form-item>
+                        <el-form-item label="國民身分證統一編號（居留證號）：" prop="idCard" label-width="270" class="form-item1">
+                            <el-input v-model="form.idCard" type="text"></el-input>
+                        </el-form-item>
+                        <el-form-item label="生理性別" label-width="270" prop="gender" class="form-item1">
+                            <el-radio-group v-model="form.gender">
+                                <el-radio label="男" value="男"></el-radio>
+                                <el-radio label="女" value="女"></el-radio>
+                                <el-radio label="其他，請說明:" value="其他"></el-radio>
+                            </el-radio-group>
+                            <el-input class="sex-other" v-if="form.gender === '其他'" v-model="form.genderOther"
+                                width="150">
+
+                            </el-input>
+                        </el-form-item>
+                        <el-form-item label="服務單位" label-width="270" prop="serviceUnit" class="form-item1">
+                            <el-input v-model="form.department" type="text"></el-input>
+                        </el-form-item>
+                        <el-form-item label="職稱" label-width="270" prop="jobTitle" class="form-item1">
+                            <el-input v-model="form.jobTitle" type="text"></el-input>
+                        </el-form-item>
+                        <el-form-item label="聯絡地址：" label-width="270" prop="address" class="form-item1 address">
+                            <el-input v-model="form.contactAddress" type="text"></el-input>
+                        </el-form-item>
+                        <el-form-item label="聯絡電話：" label-width="270" prop="phone" class="form-item1">
+                            <el-input v-model="form.phone" type="tel"></el-input>
+                        </el-form-item>
+                        <el-form-item label="E-Mail：" label-width="270" prop="email" class="form-item1">
+                            <el-input class="email-input" v-model="form.email" type="email"></el-input>
+                        </el-form-item>
+
+                        <div class="captcha-box">
+                            <client-only>
+                                <img v-if="captchaImg" :src="captchaImg" @click="refreshCaptcha" alt="點擊刷新驗證碼"
+                                    class="captcha-image" />
+                            </client-only>
+                            <el-form-item prop="verificationCode" class="captcha-label">
+                                <el-input v-model="form.verificationCode" type="text"></el-input>
+                            </el-form-item>
+                        </div>
+                        <!-- <div class="instructions-div">
                         <el-form-item>
                             <el-checkbox v-model="approveInstructions" class="instructions"><u
                                     @click="drawer = true">我已閱讀並同意說明事項</u></el-checkbox>
                         </el-form-item>
-                    </div>
-                    <div class="submit-section">
-                        <el-form-item>
-                            <el-button class="submit" @click="submitForm(ruleFormRef)">送出資料</el-button>
-                            <el-button class="reset" @click="resetForm(ruleFormRef)">重新填寫</el-button>
-                        </el-form-item>
-                    </div>
-                </el-form>
-            </div> -->
+                    </div> -->
+                        <div class="submit-section">
+                            <el-form-item>
+                                <el-button class="submit" @click="submitForm(ruleFormRef)">送出資料</el-button>
+                                <el-button class="reset" @click="resetForm(ruleFormRef)">重新填寫</el-button>
+                            </el-form-item>
+                        </div>
+                    </el-form>
+                </div>
 
-
-            <!-- <el-drawer v-model="drawer" direction="rtl" size="30%">
-                <template #header>
-                    <h4 class="drawer-header">說明事項</h4>
-                </template>
-                <template #default>
-                    <div class="drawer-content-box">
-                        <p class="notice">
-                            <span>★</span>提醒您，線上送出資料後，請務必<u>列印同意書</u>，簽名後郵寄至本會，後續辦理健保IC卡登錄，才算完成器捐意願預立。如不便列印，請來信或致電告知姓名、收件地址，由本會郵寄同意書。
-                        </p>
-                        <p>說明事項：</p>
-                        <p class="instructions-title">
-                            一、依人體器官移植條例之規定，器官捐贈必須為無償之行為，且器官之摘取，應於病人之診治醫師判定死亡後為之（含腦死判定）。如病人為非病死或疑似為非病死者，必須於依法相驗完畢後，且經檢察官認無繼續勘驗之必要後，才能施行。
-                        </p>
-
-                        <p class="instructions-title">二、另依人體器官移植條例第六條之規定，醫師自往生者遺體摘取器官以供移植，須符合下列規定之一：
-
-
-                        <p> 　（一）往生者生前以書面（如本同意書）或遺囑同意。
-                        </p>
-                        <p> 　（二）往生者最近親屬以書面同意。</p>
-                        </p>
-
-                        <p class="instructions-title">
-                            三、您簽署的器官捐贈同意書，將依人體器官移植條例第六條規定，加註於健保卡並掃描存檔於「衛生福利部安寧療護及器官捐贈意願資訊系統」；如醫院、醫師遇有病人經診斷其病情於近期內進行至死亡已不可避免，且該病人無法清楚表達意識之情況下，將以此作為決定器官捐贈之依循，並可讓家屬充分瞭解病人生前之意願。醫院、醫師絕不會因知悉此捐贈意願而不施予必要治療。
-                        </p>
-                        <p class="instructions-title"> 四、捐贈者如患無法控制的感染性疾病，如庫賈氏病（Creutzfeldt-Jakob
-                            Disease，CJD）…等等，為避免因器官移植而傳染給受贈者，醫院、醫師得不接受病人之器官捐贈。
-                        </p>
-                        <p class="instructions-title">
-                            五、您所表達之器官捐贈意願，可隨時查詢或撤回。如欲查詢或撤回該意願，可聯絡「衛生福利部安寧療護及器官捐贈意願資料處理小組」單位協助處理，電話：02-2393-3298。
-                        </p>
-                        <p class="instructions-title"> 六、本資料僅供器官捐贈意願表達使用，將依個人資料保護法，善盡保密之責任。
-                        </p>
-                    </div>
-                </template>
-
-            </el-drawer> -->
-
+            </div>
 
         </div>
-
-    </div>
-</template>
+    </template>
 <script lang="ts" setup>
 import Breadcrumbs from '@/components/layout/Breadcrumbs.vue'
 import type { FormInstance, FormRules } from 'element-plus'
@@ -174,7 +116,19 @@ const formRules = reactive<FormRules<form>>({
             required: true,
             message: '請輸入國民身分證統一編號',
             trigger: 'blur'
-        }
+        },
+        {
+            validator: (
+                rule: unknown,
+                value: string,
+                callback: (error?: Error) => void
+            ) => {
+                const { valid, message } = checkCkDigit(value);
+                if (!valid) callback(new Error(message));
+                else callback();
+            },
+            trigger: "blur",
+        },
     ],
     birthday: [
         {
@@ -185,51 +139,60 @@ const formRules = reactive<FormRules<form>>({
         },
         {
             type: 'date',
-            message: '請依照正確格是輸入: yyyy-mm-dd',
+            message: '請依照正確格式輸入: yyyy-mm-dd',
             trigger: 'blur'
-        }
-    ],
-    contactNumber: [
+        },
         {
-            required: true,
-            message: '請輸入連絡電話',
+            validator: (rule, value, callback) => {
+                const today = new Date();
+                const birthDate = new Date(value);
+                const age = ref(today.getFullYear() - birthDate.getFullYear())
+                const monthDiff = today.getMonth() - birthDate.getMonth();
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                    age.value--;
+                }
+                if (age.value < 18) {
+                    callback(new Error('申請人必須年滿18歲'));
+                } else {
+                    callback();
+                }
+            },
             trigger: 'blur'
         }
     ],
-    phoneNumber: [
+    email: [
+        {
+            type: 'email',
+            required: true,
+            message: '請輸入正確的電子郵件',
+            trigger: 'blur'
+        }
+    ],
+    phone: [
         {
             required: true,
             message: '請輸入手機號碼',
             trigger: 'blur'
         }
     ],
-    address: [
+    gender: [
+        { required: true, message: '請選擇生理性別', trigger: 'change' },
         {
-            required: true,
-            message: '請輸入聯絡地址',
-            trigger: 'blur'
-        }
-    ],
-    legalRepresentativeName: [
-        {
-            required: true,
-            message: '請輸入法定代理人姓名',
-            trigger: 'blur'
-        }
-    ],
-    legalRepresentativeIdCard: [
-        {
-            required: true,
-            message: '請輸入法定代理人國民身分證統一編號'
-            , trigger: 'blur'
-        }
-    ],
-    donateOrgans: [
-        {
-            type: 'array',
-            required: true,
-            message: '請至少勾選一個捐贈項目',
+            validator: (rule, value, callback) => {
+                if (value === '其他' && !form.genderOther) {
+                    callback(new Error('請填寫其他性別說明'));
+                } else {
+                    callback();
+                }
+            },
             trigger: 'change',
+        },
+    ],
+    verificationCode: [
+        {
+            required: true,
+            message: '請輸入驗證碼',
+            trigger: 'blur',
         },
     ],
 
@@ -237,34 +200,34 @@ const formRules = reactive<FormRules<form>>({
 
 interface form {
     name: string,
-    idCard: string,
     birthday: string,
+    idCard: string,
+    gender: string,
+    genderOther?: string,
     contactNumber: string,
-    phoneNumber: string,
+    phone: string,
+    department: string,
+    jobTitle: string,
     email: string,
-    address: string,
-    legalRepresentativeName: string,
-    legalRepresentativeIdCard: string,
-    consentCard: string,
-    reason: string,
-    wordToFamily: string,
-    donateOrgans: string[]
+    contactAddress: string,
+    verificationKey: string,
+    verificationCode: string
 }
 
 const form = reactive<form>({
     name: '',
     idCard: '',
     birthday: '',
+    gender: '',
+    genderOther: '',
     contactNumber: '',
-    phoneNumber: '',
+    phone: '',
+    department: '',
+    jobTitle: '',
     email: '',
-    address: '',
-    legalRepresentativeName: '',
-    legalRepresentativeIdCard: '',
-    consentCard: '-1',
-    reason: '',
-    wordToFamily: '',
-    donateOrgans: ["lung", "skin", "smallIntestine"]
+    contactAddress: '',
+    verificationKey: '',
+    verificationCode: ''
 })
 
 
@@ -281,8 +244,81 @@ watch(() => drawer.value, (newVal) => {
     }
 })
 
-const insertConsentForm = async () => {
-    let res = await CSRrequest.post("organ-donation-consent", {
+// -------------------------------------------------------------------
+
+/**身分證校驗函數 */
+// 定义校验结果类型
+interface CheckResult {
+    valid: boolean;
+    message: string;
+}
+
+
+function checkCkDigit(code: string): CheckResult {
+    if (!/^[A-Z][0-9]{9}$/.test(code)) {
+        return { valid: false, message: "身份證格式不正確" };
+    }
+
+    const codeMap: Record<string, number> = {
+        A: 10,
+        B: 11,
+        C: 12,
+        D: 13,
+        E: 14,
+        F: 15,
+        G: 16,
+        H: 17,
+        I: 34,
+        J: 18,
+        K: 19,
+        L: 20,
+        M: 21,
+        N: 22,
+        O: 35,
+        P: 23,
+        Q: 24,
+        R: 25,
+        S: 26,
+        T: 27,
+        U: 28,
+        V: 29,
+        W: 32,
+        X: 30,
+        Y: 31,
+        Z: 33,
+    };
+
+    const placeCode = codeMap[code[0]];
+    if (!placeCode) {
+        return { valid: false, message: "首碼無效" };
+    }
+
+    const bodyCode = code.substring(1, 9);
+    const lastCode = code[9];
+
+    const calHead = (num: number): number =>
+        Math.floor(num / 10) * 1 + (num % 10) * 9;
+
+    const calBody = (code: string): number => {
+        let sum = 0;
+        for (let i = 0; i < code.length; i++) {
+            sum += parseInt(code[i]) * (8 - i);
+        }
+        return sum;
+    };
+
+    const idSum =
+        calHead(placeCode) + calBody(bodyCode) + parseInt(lastCode) * 1;
+    const isValid = idSum % 10 === 0;
+
+    return isValid
+        ? { valid: true, message: "合法" }
+        : { valid: false, message: "身分證號不合法" };
+}
+// -------------------------------------------------------------------
+
+const insertMemberForm = async () => {
+    let res = await CSRrequest.post("member", {
         body: form
     })
     return res
@@ -304,20 +340,15 @@ const submitForm = async (formEl: FormInstance | undefined) => {
     if (!formEl) return
     await formEl.validate(async (valid, fields) => {
         if (valid) {
-            if (approveInstructions.value) {
-                // console.log('submit!', form)
-                ScreenLoading()
-                let res = await insertConsentForm()
-                if (res.code != 200) {
-                    ElMessage.error(res.msg)
-                    return
-                }
-                ElMessage.success("上傳成功")
-                resetForm(ruleFormRef.value)
-
-            } else {
-                ElMessage.error('請先閱讀並同意說明事項')
+            ScreenLoading()
+            let res = await insertMemberForm()
+            if (res.code != 200) {
+                ElMessage.error(res.msg)
+                return
             }
+            ElMessage.success("上傳成功")
+            resetForm(ruleFormRef.value)
+
         } else {
             ElMessage.error("請填寫完整的資訊")
             console.log('error submit!', fields)
@@ -328,11 +359,33 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 const resetForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return
     formEl.resetFields()
-    form.consentCard = '-1'
-    form.donateOrgans = []
-    console.log(form);
 }
 
+/** 驗證碼，僅在客户端执行 */
+// 定義驗證碼圖片
+const captchaImg = ref('')
+
+// 只在客户端调用
+const refreshCaptcha = async () => {
+    try {
+        const response = await CSRrequest.get('member/captcha',)
+
+        console.log('響應為:', response)
+
+        captchaImg.value = response.data.image
+        form.verificationKey = response.data.key
+
+        console.log("驗證碼key為:", form.verificationKey)
+
+
+    } catch (error) {
+        console.error('刷新驗證碼失敗', error)
+    }
+}
+
+onMounted(() => {
+    refreshCaptcha()
+})
 
 </script>
 
@@ -468,7 +521,18 @@ const resetForm = (formEl: FormInstance | undefined) => {
                         }
                     }
                 }
+
+                .sex-other {
+                    width: 10%;
+
+                    @media screen and (max-width:850px) {
+                        width: 60%;
+
+                    }
+                }
             }
+
+
 
             .email {
                 :deep(.el-form-item__label) {
@@ -621,6 +685,20 @@ const resetForm = (formEl: FormInstance | undefined) => {
                 .reset {
                     background-color: #F49E19;
                 }
+            }
+
+            .captcha-box {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                margin-top: 1rem;
+                margin-bottom: 1.3rem;
+
+                .captcha-label {
+                    margin-bottom: 0;
+                    margin-left: 20px;
+                }
+
             }
         }
     }
