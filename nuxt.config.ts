@@ -68,7 +68,11 @@ export default defineNuxtConfig({
           additionalData: '@import "@/assets/styles/global.scss";',
         }
       }
-    }
+    },
+
+    esbuild: {
+      drop: ['console', 'debugger'], // 移除 console 和 debugger
+    },
   },
   devtools: {
     enabled: false  //預設為true
