@@ -123,7 +123,7 @@ const formRules = reactive<FormRules<form>>({
                 value: string,
                 callback: (error?: Error) => void
             ) => {
-                const { valid, message } = checkCkDigit(value);
+                const { valid, message } = checkResidentCertificate(value);
                 if (!valid) callback(new Error(message));
                 else callback();
             },
@@ -253,40 +253,41 @@ interface CheckResult {
     message: string;
 }
 
+const codeMap: Record<string, number> = {
+    A: 10,
+    B: 11,
+    C: 12,
+    D: 13,
+    E: 14,
+    F: 15,
+    G: 16,
+    H: 17,
+    I: 34,
+    J: 18,
+    K: 19,
+    L: 20,
+    M: 21,
+    N: 22,
+    O: 35,
+    P: 23,
+    Q: 24,
+    R: 25,
+    S: 26,
+    T: 27,
+    U: 28,
+    V: 29,
+    W: 32,
+    X: 30,
+    Y: 31,
+    Z: 33,
+};
 
 function checkCkDigit(code: string): CheckResult {
     if (!/^[A-Z][0-9]{9}$/.test(code)) {
         return { valid: false, message: "身份證格式不正確" };
     }
 
-    const codeMap: Record<string, number> = {
-        A: 10,
-        B: 11,
-        C: 12,
-        D: 13,
-        E: 14,
-        F: 15,
-        G: 16,
-        H: 17,
-        I: 34,
-        J: 18,
-        K: 19,
-        L: 20,
-        M: 21,
-        N: 22,
-        O: 35,
-        P: 23,
-        Q: 24,
-        R: 25,
-        S: 26,
-        T: 27,
-        U: 28,
-        V: 29,
-        W: 32,
-        X: 30,
-        Y: 31,
-        Z: 33,
-    };
+
 
     const placeCode = codeMap[code[0]];
     if (!placeCode) {
@@ -315,6 +316,105 @@ function checkCkDigit(code: string): CheckResult {
         ? { valid: true, message: "合法" }
         : { valid: false, message: "身分證號不合法" };
 }
+
+// 舊版居留證號驗證邏輯
+const checkOldResidentCertificate = (code: string): CheckResult => {
+    if (!/^[A-Z][A-D][0-9]{8}$/.test(code)) {
+        return { valid: false, message: '舊版居留證格式不正確' };
+    }
+
+    const placeCode = codeMap[code[0]];
+    const genderCode = codeMap[code[1]] % 10; // 取個位數;
+    // console.log("舊版校驗性別碼為: ", genderCode)
+    const bodyCode = code.substring(2, 9);
+    // console.log("舊版校驗區域碼為 ", bodyCode)
+
+    const lastCode = code[9];
+
+    if (!placeCode || genderCode === undefined) {
+        return { valid: false, message: '首碼或性別碼無效' };
+    }
+
+    // 計算num 除以10的商,並向下取整,獲取10位數字
+    // 例如，num = 23，则 Math.floor(23 / 10) 为 2。
+    const calHead = (num: number): number => {
+        // console.log("舊版校驗地區值 ", (Math.floor(num / 10) * 1) + ((num % 10) * 9))
+        return (Math.floor(num / 10) * 1) + ((num % 10) * 9);
+    }
+
+
+    const calBody = (code: string): number => {
+        let sum = 0;
+        // console.log("舊版body code長度", code.length)
+        for (let i = 0; i < code.length; i++) {
+            // console.log("當前code號 ", code[i])
+            sum += parseInt(code[i]) * (7 - i);
+        }
+        return sum;
+    };
+
+    const idSum =
+        calHead(placeCode) + genderCode * 8 + calBody(bodyCode) + parseInt(lastCode) * 1;
+
+    console.log("舊版居留證號值", idSum)
+
+    const isValid = idSum % 10 === 0;
+
+    return isValid
+        ? { valid: true, message: '合法' }
+        : { valid: false, message: '舊版居留證號不合法' };
+};
+
+// 新版居留證驗證邏輯
+const checkNewResidentCertificate = (code: string): CheckResult => {
+    if (!/^[A-Z][89][0-9]{8}$/.test(code)) {
+        return { valid: false, message: '新版居留證格式不正確' };
+    }
+
+    const placeCode = codeMap[code[0]];
+    const bodyCode = code.substring(1, 9);
+    console.log("新版body code ", bodyCode)
+    const lastCode = code[9];
+
+    if (!placeCode === undefined) {
+        return { valid: false, message: '首碼無效' };
+    }
+
+    const calHead = (num: number): number =>
+        Math.floor(num / 10) * 1 + (num % 10) * 9;
+
+    const calBody = (code: string): number => {
+        let sum = 0;
+        for (let i = 0; i < code.length; i++) {
+            sum += parseInt(code[i]) * (8 - i);
+        }
+        return sum;
+    };
+
+    const idSum =
+        calHead(placeCode) + calBody(bodyCode) + parseInt(lastCode) * 1;
+
+    console.log("新版居留證號值", idSum)
+
+    const isValid = idSum % 10 === 0;
+
+    return isValid
+        ? { valid: true, message: '合法' }
+        : { valid: false, message: '新版居留證號不合法' };
+};
+
+// 居留證驗證邏輯（舊版或新版）
+const checkResidentCertificate = (code: string): CheckResult => {
+    const oldResult = checkOldResidentCertificate(code);
+    const newResult = checkNewResidentCertificate(code);
+    const icCaedResult = checkCkDigit(code);
+
+    if (oldResult.valid || newResult.valid || icCaedResult.valid) {
+        return { valid: true, message: '合法' };
+    } else {
+        return { valid: false, message: '身分證 （居留證號）不合法' };
+    }
+};
 // -------------------------------------------------------------------
 
 const insertMemberForm = async () => {
@@ -346,8 +446,11 @@ const submitForm = async (formEl: FormInstance | undefined) => {
                 ElMessage.error(res.msg)
                 return
             }
-            ElMessage.success("上傳成功")
+            ElMessage.success("註冊成功")
             resetForm(ruleFormRef.value)
+            form.contactAddress = ''
+            form.department = ''
+            refreshCaptcha()
 
         } else {
             ElMessage.error("請填寫完整的資訊")
