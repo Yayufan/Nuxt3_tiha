@@ -26,7 +26,7 @@
 /* 主題色系 */
 $main-color: #713281;
 $main-content-color: #6D6D6D;
-$main-hover-bg: #E6EFD3;
+$main-hover-bg: #dfc8e4;
 $main-hover-text: #363838;
 $main-hover-btn-bg: #C5CEB6;
 $main-hover-btn-text: #363838;
@@ -53,6 +53,10 @@ $common-title-letter-spacing: 0.1rem;
 /* 內文字的大小 */
 $paragraph-font-size:1rem;
 $inner-box-font-size:1rem;
+
+/* 文章盒子字的大小 */
+$inner-box-title-font-size: 1.3rem;
+$inner-box-font-size: 1.1rem;
 
 
 // 在螢幕寬度大於 1024px（PC）時

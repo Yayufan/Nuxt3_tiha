@@ -137,6 +137,13 @@ watch(currentPage, (value, oldValue) => {
         margin-left: 10%;
         margin-bottom: 3%;
 
+        &::before {
+            display: inline;
+            content: "";
+            border-left: 3px solid $main-color;
+            padding-right: 10px;
+        }
+
         @media screen and (max-width:481px) {
             margin-left: 0;
         }
@@ -181,9 +188,8 @@ watch(currentPage, (value, oldValue) => {
                     max-width: 15rem;
                     min-width: 145px;
 
-
-                    @media screen and (max-width:481px) {
-                        max-width: 145px;
+                    @media screen and (max-width:850px) {
+                        max-width: 150px;
                     }
 
                     img {
@@ -199,12 +205,14 @@ watch(currentPage, (value, oldValue) => {
                     margin-left: 1rem;
 
                     .article-title {
-                        font-size: 1.2rem;
+                        font-size: $inner-box-title-font-size;
                         margin: 0.3rem 0;
+                        color: $main-content-color;
                     }
 
                     .article-description {
                         color: $main-content-color;
+                        font-size: $inner-box-font-size;
 
                         @media screen and (max-width:480px) {
                             display: -webkit-box;
