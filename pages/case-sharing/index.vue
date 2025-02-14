@@ -18,23 +18,7 @@
                     <article class="article-item" v-for="(item, index) in articleList.records " :key="item.articleId">
 
                         <nuxt-link class="article-item-link"
-                            :to="item.path">
-
-                            <div class="article-img-box">
-                                <img class="article-img" src="@/assets/img/cta-img-1.jpg">
-                            </div>
-
-                            <div class="article-info-box">
-                                <h2 class="article-title">{{ item.title }}</h2>
-                                <p class="article-description">
-                                    {{ item.description }}
-                                </p>
-                            </div>
-                        </nuxt-link>
-
-
-                        <!-- <nuxt-link class="article-item-link"
-                            :to="{ name: 'organ-donation-id', params: { id: item.articleId } }">
+                            :to="{ name: 'case-sharing-id', params: { id: item.articleId } }">
 
                             <div class="article-img-box">
                                 <img class="article-img" :src="`/minio${item.coverThumbnailUrl}`">
@@ -46,7 +30,7 @@
                                     {{ item.description }}
                                 </p>
                             </div>
-                        </nuxt-link> -->
+                        </nuxt-link>
 
                     </article>
 
@@ -76,31 +60,6 @@
 import { ref, reactive } from 'vue'
 import Breadcrumbs from '@/components/layout/Breadcrumbs.vue'
 
-let articleList = reactive({
-    pages: 1,
-    size: 4,
-    records: [
-        {
-            articleId: '01',
-            title: '腸道發炎性疾病，能不能生小孩？_章振旺醫師',
-            description: '病房的住院醫師在護理站叫住我，表示24A的林小姐想轉照顧的主治醫師改成我? 一問之下才知道，原來是我的老病人...',
-            coverThumbnailUrl: '',
-            path:'/article01'
-        },
-        {
-            articleId: '02',
-            title: '重拾設計夢—生物製劑助克隆氏症合併廔管患者回歸幸福生活＿李柏賢醫師',
-            description: '32歲的室內設計師小安因右下腹疼痛、血便、反覆泌尿道感染及體重減輕八公斤，過去一年多來多次就醫卻未見改善，甚至被迫辭去工作...',
-            coverThumbnailUrl: '',
-            path:'/article02'
-        }
-    ]
-})
-
-//設定分頁組件,currentPage當前頁數
-let currentPage = ref(articleList.pages)
-
-/** 
 
 //根據裝置預設顯示數量
 // const defaultSize = ref(useState('currentSize', () => useIsMobile().value ? 8 : 8))
@@ -115,7 +74,7 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
 let currentPage = ref(page)
 let currentSize = ref(size)
 
-const GROUP = "organDonation"
+const GROUP = "caseSharing"
 
 let articleList = reactive({
     pages: 1,
@@ -166,7 +125,6 @@ watch(currentPage, (value, oldValue) => {
 
 })
 
-*/
 
 
 </script>
@@ -184,6 +142,13 @@ watch(currentPage, (value, oldValue) => {
         letter-spacing: $common-title-letter-spacing;
         margin-left: 10%;
         margin-bottom: 3%;
+
+        &::before {
+            display: inline;
+            content: "";
+            border-left: 3px solid $main-color;
+            padding-right: 10px;
+        }
 
         @media screen and (max-width:481px) {
             margin-left: 0;
@@ -205,10 +170,13 @@ watch(currentPage, (value, oldValue) => {
 
         .article-item {
             margin-bottom: 5%;
-            // width: 29%;  之後再打開  
-            width: 40%;
+            width: 29%;
             padding: 1rem 1rem;
             transition: 0.5s;
+
+            @media screen and (max-width:850px) {
+                width: 43%;
+            }
 
             @media screen and (max-width:480px) {
                 width: 42%;
@@ -248,17 +216,18 @@ watch(currentPage, (value, oldValue) => {
                     text-align: left;
 
                     .article-title {
-                        font-size: 1.2rem;
+                        font-size: $inner-box-title-font-size;
                         margin: 0.8rem 0;
+                        color: $main-content-color;
                     }
 
                     .article-description {
                         color: $main-content-color;
+                        font-size: $inner-box-font-size;
                         //這組合是超過三行時使用...
                         display: -webkit-box;
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 3;
-                        line-clamp: 3;
                         overflow: hidden;
 
                     }
