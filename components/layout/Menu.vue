@@ -85,7 +85,7 @@ watch(scrollPosition, (newValue) => {
 
     .PC-navbar {
         border-bottom: none;
-        margin-top: 20px;
+        // margin-top: 20px;
         padding: 0;
         margin-left: auto;
         margin-right: auto;

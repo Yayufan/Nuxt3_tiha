@@ -148,7 +148,7 @@ const goToBottom = () => {
 .PC-menu-box {
     width: 100%;
     display: flex;
-    //justify-content: center;
+    align-items: center;
     justify-content: space-between;
 
     @media screen and (max-width: 850px) {
@@ -192,7 +192,7 @@ const goToBottom = () => {
         // align-items: flex-end;
         align-items: center;
         margin-left: 15vw;
-        padding-bottom: 0.5rem;
+        //padding-bottom: 0.5rem;
 
         @media screen and (max-width: 850px) {
             display: none;

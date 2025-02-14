@@ -136,11 +136,12 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
     }
 
     .main-visual-box {
-        margin: 3% 0;
+        // margin: 3% 0;
         text-align: center;
 
         img {
-            max-width: 80%;
+            // max-width: 80%;
+            max-width: 100%;
             width: 100%;
         }
     }
