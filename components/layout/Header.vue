@@ -84,8 +84,8 @@ const menuItem = [
     {
         title: '訊息看板',
         subMenu: [
-            { title: '最新消息', link: '' },
-            { title: '活動花絮', link: '' },
+            { title: '最新消息', link: '/news' },
+            { title: '活動花絮', link: '/event-highlights' },
             // { title: '合作申請單', link: '/cooperation' }
         ]
     },

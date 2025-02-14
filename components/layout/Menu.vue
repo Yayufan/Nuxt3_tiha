@@ -17,8 +17,8 @@
        
             <el-sub-menu index="2">
                 <template #title>訊息看板</template>
-                <nuxt-link   to="" ><el-menu-item index="news">最新消息</el-menu-item></nuxt-link>
-                <nuxt-link   to="" ><el-menu-item
+                <nuxt-link   to="/news" ><el-menu-item index="news">最新消息</el-menu-item></nuxt-link>
+                <nuxt-link   to="/event-highlights" ><el-menu-item
                         index="event-highlights">活動花絮</el-menu-item></nuxt-link>
                 <!-- <nuxt-link :to="'/cooperation'"><el-menu-item index="cooperation">合作申請單</el-menu-item></nuxt-link> -->
             </el-sub-menu>
