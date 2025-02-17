@@ -101,7 +101,7 @@ const menuItem = [
     {
         title: '影音專區',
         subMenu: [
-            // { title: '協助資源', link: '/assistance-resources' },
+            { title: '影片精選', link: '/featured-video' },
             // { title: '好書推薦', link: '/book-recommendations' },
 
         ]

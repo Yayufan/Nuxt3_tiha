@@ -3,11 +3,11 @@
 
     <div>
 
-        <Breadcrumbs firstRoute="認識器捐" secoundRoute="影音專區"></Breadcrumbs>
+        <Breadcrumbs firstRoute="影音專區" secoundRoute="影片精選"></Breadcrumbs>
 
         <section class="common-section">
 
-            <h1 class="common-title">影音專區</h1>
+            <h1 class="common-title">影片精選</h1>
 
             <div class="content-box">
 
@@ -16,7 +16,7 @@
                     <article class="article-item" v-for="(item, index) in articleList.records " :key="item.articleId">
 
                         <nuxt-link class="article-item-link"
-                            :to="{ name: 'video-area-id', params: { id: item.articleId } }">
+                            :to="{ name: 'featured-video-id', params: { id: item.articleId } }">
 
                             <h2 class="article-title">{{ item.title }}</h2>
                             <div class="decorate-box"></div>
@@ -74,7 +74,7 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
 let currentPage = ref(page)
 let currentSize = ref(size)
 
-const GROUP = "videoArea"
+const GROUP = "featuredVideo"
 
 let articleList = reactive({
     pages: 1,

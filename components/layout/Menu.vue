@@ -37,8 +37,9 @@
             </el-sub-menu>
             <el-sub-menu index="4">
                 <template #title>影音專區</template>
-                <!-- <nuxt-link :to="'/assistance-resources'"><el-menu-item
-                        index="assistance-resources">協助資源</el-menu-item></nuxt-link>
+                <nuxt-link :to="'/featured-video'"><el-menu-item
+                        index="featured-video">影片精選</el-menu-item></nuxt-link>
+                <!--
                 <nuxt-link :to="'/book-recommendations'"><el-menu-item
                         index="book-recommendations">好書推薦</el-menu-item></nuxt-link>
                 <nuxt-link :to="'/social-work-column'"><el-menu-item
