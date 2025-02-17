@@ -167,6 +167,16 @@ watch(currentPage, (value, oldValue) => {
             &:hover {
                 cursor: pointer;
                 background: $main-hover-bg;
+                
+                .article-info-box{
+                    .article-title{
+                        color: $main-hover-text;
+                    }
+
+                    .article-description{
+                        color: $main-hover-text;
+                    }
+                }
 
                 .article-img-box {
                     img {

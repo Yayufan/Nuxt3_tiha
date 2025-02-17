@@ -193,7 +193,7 @@ watch(currentPage, (value, oldValue) => {
                     left: 50%;
                     transform: translate(-50%, -50%);
                     z-index: 50;
-                    background: #99BF83;
+                    background: #cd93c6;
                     color: #fff;
                     text-align: center;
                     font-size: 1.1rem;
