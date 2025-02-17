@@ -21,13 +21,13 @@
             <p class="title">快速連結</p>
             <div class="icon-link-box">
                 <div class="link-item">
-                    <nuxt-link to="">
+                    <nuxt-link to="/news">
                         <img src="@/assets/img/purpose-icon.png" alt="">
                     </nuxt-link>
                     <p>最新消息</p>
                 </div>
                 <div class="link-item">
-                    <nuxt-link to="">
+                    <nuxt-link to="/case-sharing">
                         <img src="@/assets/img/become-member-icon.png" alt="">
                     </nuxt-link>
                     <p>衛教資訊</p>
@@ -39,7 +39,7 @@
                     <p>線上捐款</p>
                 </div>
                 <div class="link-item">
-                    <nuxt-link to="">
+                    <nuxt-link to="/purpose">
                         <img src="@/assets/img/achievements-icon.png" alt="">
                     </nuxt-link>
                     <p>關於我們</p>
