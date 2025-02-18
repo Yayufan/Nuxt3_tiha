@@ -1,6 +1,6 @@
 <template>
     <header class="PC-menu-box">
-        <img class="hambuger-menu" src="@/assets/img/HamburgerMenu.png" alt="" @click="openMenu">
+        <img class="hambuger-menu" src="@/assets/img/HamburgerMenu.svg" alt="" @click="openMenu">
         <div class="logo-box">
             <nuxt-link :to="'/'"><img ref="" class="logo" src="@/assets/img/logo.png" alt="logo"
                     @click="closeMenu"></img></nuxt-link>
