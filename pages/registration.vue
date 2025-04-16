@@ -446,7 +446,12 @@ const submitForm = async (formEl: FormInstance | undefined) => {
                 ElMessage.error(res.msg)
                 return
             }
-            ElMessage.success("註冊成功")
+            // ElMessage.success("註冊成功")
+            ElMessage.success({
+                dangerouslyUseHTMLString: true,
+                message: "<p style='font-size:2.5rem;'> 註冊成功 </p>",
+            })
+
             resetForm(ruleFormRef.value)
             form.contactAddress = ''
             form.department = ''
@@ -488,6 +493,7 @@ const refreshCaptcha = async () => {
 
 onMounted(() => {
     refreshCaptcha()
+
 })
 
 </script>
