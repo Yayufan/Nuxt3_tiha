@@ -75,10 +75,8 @@ const menuItem = [
     {
         title: '關於我們',
         subMenu: [
-            {
-                title: '宗旨任務',
-                link: '/purpose'
-            },
+            {title: '宗旨任務',link: '/purpose'},
+            {title: '協會組織名單',link: '/organization-list'},
         ]
     },
     {

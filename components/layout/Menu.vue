@@ -11,6 +11,7 @@
             <el-sub-menu index="1">
                 <template #title class="firstTitle">關於我們</template>
                 <nuxt-link :to="'/purpose'"><el-menu-item index="purpose">成立宗旨</el-menu-item></nuxt-link>
+                <nuxt-link :to="'/organization-list'"><el-menu-item index="organization-list">協會組織名單</el-menu-item></nuxt-link>
                 
             </el-sub-menu>
 

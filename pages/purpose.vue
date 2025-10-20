@@ -36,6 +36,19 @@
                 </article>
 
                 <!-- <article class="paragraph ">
+                    <h2 class="sub-title">組織名單</h2>
+                    <ul class="content org-content" >
+                        <li>理事長：陳冠仰</li>
+                        <li>常務理事：李伯賢、鍾承軒</li>
+                        <li>理事：陳冠仰、李伯賢、周仁偉、黃天祐、賴明瑋、李鈺淳、林敬斌、莊喬雄、鍾承軒</li>
+                        <li>常務監事：戴維震</li>
+                        <li>監事：戴維震、黃鈺軒、李詠瑄</li>
+                        <li>秘書長：章振旺</li>
+                        <li>副秘書長：黃樂心、陳哲士、劉靜錤、邱凡華</li>
+                    </ul>
+                </article> -->
+
+                <!-- <article class="paragraph ">
                     <h2 class="sub-title">組織架構</h2>
                     <div class="content organizational-structure-box ">
                         <img src="@/assets/img/organizational-chart.png">
@@ -123,108 +136,108 @@ interface Supervisor {
 let initialSupervisorsList = reactive<Supervisor[]>([
     {
         session: '第一屆',
-        termOfOffice: '82.8.27~85.9.6',
-        chairman: '葉高芳',
-        executiveDirector: '周天瑞、黃明義、魏崢、蘇宜三',
-        director: '賴明坤、連榮達、朱樹勳、林孝義、易長筠、蘇培人、陳武宗、嚴道、周昌德、秦燕、孫鉞',
+        termOfOffice: '',
+        chairman: '陳冠仰',
+        executiveDirector: '李伯賢、鍾承軒',
+        director: '陳冠仰、李伯賢、周仁偉、黃天祐、賴明瑋、李鈺淳、林敬斌、莊喬雄、鍾承軒',
         executiveSupervisor: '鄭敏朗',
-        supervisor: '黃俊雄、李伯皇、詹德順、江易雄'
+        supervisor: '戴維震、黃鈺軒、李詠瑄'
     },
-    {
-        session: '第二屆',
-        termOfOffice: '85.9.6~88.9.11',
-        chairman: '魏崢',
-        executiveDirector: '葉高芳、嚴道、黃桂福、黃明義',
-        director: '賴明坤、蘇培人、林孝義、朱樹勳、孫鉞、連榮達、江淇松、周昌德、周天瑞、陳武宗',
-        executiveSupervisor: '陳淑麗',
-        supervisor: '謝輝和、鄭敏朗、柯文哲、陳庵君'
-    },
-    {
-        session: '第三屆',
-        termOfOffice: '88.9.11~91.9.19',
-        chairman: '賴明坤',
-        executiveDirector: '魏崢、嚴道、黃明義、 連榮達',
-        director: '鄭隆賓、蘇培人、周迺寬、朱樹勳、莫等卿、張忠毅、楊美都、周昌德、江淇松、陳豐仁、周天瑞、黃桂福、林孝義、高平通、陳武宗、侯靜蘭',
-        executiveSupervisor: '陳淑麗',
-        supervisor: '謝輝和、吳志雄、柯文哲、邱虛谷、鄭敏朗、李玉蓉'
-    },
+    // {
+    //     session: '第二屆',
+    //     termOfOffice: '85.9.6~88.9.11',
+    //     chairman: '魏崢',
+    //     executiveDirector: '葉高芳、嚴道、黃桂福、黃明義',
+    //     director: '賴明坤、蘇培人、林孝義、朱樹勳、孫鉞、連榮達、江淇松、周昌德、周天瑞、陳武宗',
+    //     executiveSupervisor: '陳淑麗',
+    //     supervisor: '謝輝和、鄭敏朗、柯文哲、陳庵君'
+    // },
+    // {
+    //     session: '第三屆',
+    //     termOfOffice: '88.9.11~91.9.19',
+    //     chairman: '賴明坤',
+    //     executiveDirector: '魏崢、嚴道、黃明義、 連榮達',
+    //     director: '鄭隆賓、蘇培人、周迺寬、朱樹勳、莫等卿、張忠毅、楊美都、周昌德、江淇松、陳豐仁、周天瑞、黃桂福、林孝義、高平通、陳武宗、侯靜蘭',
+    //     executiveSupervisor: '陳淑麗',
+    //     supervisor: '謝輝和、吳志雄、柯文哲、邱虛谷、鄭敏朗、李玉蓉'
+    // },
 
 ])
 
 //加載後的剩餘理事會名單
 let otherSupervisorsList = reactive<Supervisor[]>([
-    {
-        session: '第四屆',
-        termOfOffice: '91.9.19~94.9.3',
-        chairman: '鄭隆賓',
-        executiveDirector: '魏崢、賴明坤、連榮達、侯靜蘭',
-        director: '莫等卿、陳淑麗、張忠毅、王志文、黃翠花、楊美都、謝輝和、李伯璋、林清麗、江淇松、周昌德、陳豐仁、朱樹勳、周迺寬、柯文哲、吳志雄',
-        executiveSupervisor: '韓月英',
-        supervisor: '李玉蓉、張志豐、蔡文玲、 林寶玉、鄭敏朗、黃智勇'
-    },
-    {
-        session: '第五屆',
-        termOfOffice: '94.9.3~97.9.3',
-        chairman: '魏崢',
-        executiveDirector: '鄭隆賓、李伯璋、李芳艷、張忠毅',
-        director: '王志文、陳靜陵、林齊國、賴明坤、謝輝和、楊美都、何金龍、吳志雄、朱樹勳、陳淑麗、周昌德、張奇香、傅明貴、林清麗、李盛財、林孝義',
-        executiveSupervisor: '韓月英',
-        supervisor: '邱虛谷、林寶玉、張志豐、黃俊雄、蔡文玲、李亮德'
-    },
-    {
-        session: '第六屆',
-        termOfOffice: '97.8.31~100.8.31',
-        chairman: '魏崢',
-        executiveDirector: '張忠毅、謝輝和、洪芳明、陳淑麗',
-        director: '鄭隆賓、賴明坤、張奇香、李芳艷、陳靜陵、楊美都、邱亦宣、王志文、鄭麗容、朱樹勳、李伯璋、林孝義、陳芬芩、周昌德、傅明貴、蔡正祥',
-        executiveSupervisor: '韓月英',
-        supervisor: '林寶玉、黃俊雄、張志豐、李亮德、邱虛谷、陳韋豪'
-    },
-    {
-        session: '第七屆',
-        termOfOffice: '100.8.27~103.8.26',
-        chairman: '龍藉泉',
-        executiveDirector: '魏崢、張忠毅、張奇香、謝輝和',
-        director: '鄭隆賓、李芳艷、劉美蓮、鄭麗容、呂金春、邱亦宣、陳隆進、陳靜陵、朱樹勳、蔡正祥、楊松齡、張龍雄、王志文、楊美都、李伯璋、安斯泰來製藥',
-        executiveSupervisor: '韓月英',
-        supervisor: '李亮德、林寶玉、黃俊雄、陳韋豪、廖美麗、黃文彰'
-    },
-    {
-        session: '第八屆',
-        termOfOffice: '103.8.23~106.8.22',
-        chairman: '張忠毅',
-        executiveDirector: '魏崢、蔡建松、張奇香、王志文',
-        director: '鄭麗容、邱亦宣、詹佳蓁、韓肇中、龍藉泉、謝輝和、陳靜陵、李伯璋、江仰仁、李芳艷、劉美蓮、王家財、楊松齡、張龍雄、周迺寬、中國附醫',
-        executiveSupervisor: '陳韋豪',
-        supervisor: '廖美麗、蔡正祥、林寶玉、黃文彰、李亮德、陳國銘'
-    },
-    {
-        session: '第九屆',
-        termOfOffice: '106.8.19~109.8.18',
-        chairman: '李明哲',
-        executiveDirector: '張奇香、李芳艷',
-        director: '魏崢、邱亦宣、江仰仁、陳靜陵、鄭麗容、呂金春、張龍雄、顏俊輝、劉美蓮、蔡建松、王植熙、謝宗保',
-        executiveSupervisor: '李亮德',
-        supervisor: '林寶玉、黃文彰、蔡正祥、韓月英'
-    },
-    {
-        session: '第十屆',
-        termOfOffice: '109.8.14~112.8.13',
-        chairman: '李明哲',
-        executiveDirector: '張奇香、江仰仁',
-        director: '鄭麗容、鍾孟軒、李芳艷、邱亦宣、魏  崢、潘瑾慧、蔡建松、陳靜陵、周迺寬、蔡長穎、張龍雄、劉美蓮',
-        executiveSupervisor: '韓月英',
-        supervisor: '林寶玉、蔡正祥、李亮德、黃文彰'
-    },
-    {
-        session: '第十一屆',
-        termOfOffice: '112.8.25~115.8.24',
-        chairman: '江仰仁',
-        executiveDirector: '李明哲、潘瑾慧',
-        director: '魏崢、張奇香、白金川、李芳艷、陳靜陵、鄭麗容、簡鑠驊、陳淑玲、鍾孟軒、蔡長穎、吳沅衿、紀炳宏',
-        executiveSupervisor: '韓月英',
-        supervisor: '李亮德、林寶玉、王家財、陳國銘'
-    },
+    // {
+    //     session: '第四屆',
+    //     termOfOffice: '91.9.19~94.9.3',
+    //     chairman: '鄭隆賓',
+    //     executiveDirector: '魏崢、賴明坤、連榮達、侯靜蘭',
+    //     director: '莫等卿、陳淑麗、張忠毅、王志文、黃翠花、楊美都、謝輝和、李伯璋、林清麗、江淇松、周昌德、陳豐仁、朱樹勳、周迺寬、柯文哲、吳志雄',
+    //     executiveSupervisor: '韓月英',
+    //     supervisor: '李玉蓉、張志豐、蔡文玲、 林寶玉、鄭敏朗、黃智勇'
+    // },
+    // {
+    //     session: '第五屆',
+    //     termOfOffice: '94.9.3~97.9.3',
+    //     chairman: '魏崢',
+    //     executiveDirector: '鄭隆賓、李伯璋、李芳艷、張忠毅',
+    //     director: '王志文、陳靜陵、林齊國、賴明坤、謝輝和、楊美都、何金龍、吳志雄、朱樹勳、陳淑麗、周昌德、張奇香、傅明貴、林清麗、李盛財、林孝義',
+    //     executiveSupervisor: '韓月英',
+    //     supervisor: '邱虛谷、林寶玉、張志豐、黃俊雄、蔡文玲、李亮德'
+    // },
+    // {
+    //     session: '第六屆',
+    //     termOfOffice: '97.8.31~100.8.31',
+    //     chairman: '魏崢',
+    //     executiveDirector: '張忠毅、謝輝和、洪芳明、陳淑麗',
+    //     director: '鄭隆賓、賴明坤、張奇香、李芳艷、陳靜陵、楊美都、邱亦宣、王志文、鄭麗容、朱樹勳、李伯璋、林孝義、陳芬芩、周昌德、傅明貴、蔡正祥',
+    //     executiveSupervisor: '韓月英',
+    //     supervisor: '林寶玉、黃俊雄、張志豐、李亮德、邱虛谷、陳韋豪'
+    // },
+    // {
+    //     session: '第七屆',
+    //     termOfOffice: '100.8.27~103.8.26',
+    //     chairman: '龍藉泉',
+    //     executiveDirector: '魏崢、張忠毅、張奇香、謝輝和',
+    //     director: '鄭隆賓、李芳艷、劉美蓮、鄭麗容、呂金春、邱亦宣、陳隆進、陳靜陵、朱樹勳、蔡正祥、楊松齡、張龍雄、王志文、楊美都、李伯璋、安斯泰來製藥',
+    //     executiveSupervisor: '韓月英',
+    //     supervisor: '李亮德、林寶玉、黃俊雄、陳韋豪、廖美麗、黃文彰'
+    // },
+    // {
+    //     session: '第八屆',
+    //     termOfOffice: '103.8.23~106.8.22',
+    //     chairman: '張忠毅',
+    //     executiveDirector: '魏崢、蔡建松、張奇香、王志文',
+    //     director: '鄭麗容、邱亦宣、詹佳蓁、韓肇中、龍藉泉、謝輝和、陳靜陵、李伯璋、江仰仁、李芳艷、劉美蓮、王家財、楊松齡、張龍雄、周迺寬、中國附醫',
+    //     executiveSupervisor: '陳韋豪',
+    //     supervisor: '廖美麗、蔡正祥、林寶玉、黃文彰、李亮德、陳國銘'
+    // },
+    // {
+    //     session: '第九屆',
+    //     termOfOffice: '106.8.19~109.8.18',
+    //     chairman: '李明哲',
+    //     executiveDirector: '張奇香、李芳艷',
+    //     director: '魏崢、邱亦宣、江仰仁、陳靜陵、鄭麗容、呂金春、張龍雄、顏俊輝、劉美蓮、蔡建松、王植熙、謝宗保',
+    //     executiveSupervisor: '李亮德',
+    //     supervisor: '林寶玉、黃文彰、蔡正祥、韓月英'
+    // },
+    // {
+    //     session: '第十屆',
+    //     termOfOffice: '109.8.14~112.8.13',
+    //     chairman: '李明哲',
+    //     executiveDirector: '張奇香、江仰仁',
+    //     director: '鄭麗容、鍾孟軒、李芳艷、邱亦宣、魏  崢、潘瑾慧、蔡建松、陳靜陵、周迺寬、蔡長穎、張龍雄、劉美蓮',
+    //     executiveSupervisor: '韓月英',
+    //     supervisor: '林寶玉、蔡正祥、李亮德、黃文彰'
+    // },
+    // {
+    //     session: '第十一屆',
+    //     termOfOffice: '112.8.25~115.8.24',
+    //     chairman: '江仰仁',
+    //     executiveDirector: '李明哲、潘瑾慧',
+    //     director: '魏崢、張奇香、白金川、李芳艷、陳靜陵、鄭麗容、簡鑠驊、陳淑玲、鍾孟軒、蔡長穎、吳沅衿、紀炳宏',
+    //     executiveSupervisor: '韓月英',
+    //     supervisor: '李亮德、林寶玉、王家財、陳國銘'
+    // },
 ])
 
 
@@ -317,6 +330,11 @@ const getOtherList = () => {
             margin-left: 14%;
             margin-top: 2%;
             font-size: $paragraph-font-size;
+        }
+
+        .org-content{
+            font-size:1.2rem;
+            line-height: 2.5;
         }
 
 
