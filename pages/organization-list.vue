@@ -1,9 +1,9 @@
 <template>
     <div>
-        <Breadcrumbs firstRoute="關於我們" secoundRoute="學會組織名單"></Breadcrumbs>
+        <Breadcrumbs firstRoute="關於我們" secoundRoute="協會組織名單"></Breadcrumbs>
         <section class="common-section">
 
-            <h1 class="common-title">學會組織名單</h1>
+            <h1 class="common-title">協會組織名單</h1>
 
             <div class="organization-list" v-for="(item, index) in supervisorsList" :key="index">
 

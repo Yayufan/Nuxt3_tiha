@@ -37,7 +37,7 @@
             </div>
         </div> -->
         <div class="copyright" style="margin-top: 5%;" >
-            <p>Copyright © 2024 台灣腸保健康協會.All Rights Reserved</p>
+            <p>Copyright © 2025 台灣腸保健康協會.All Rights Reserved</p>
         </div>
     </footer>
 </template>
