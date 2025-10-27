@@ -48,8 +48,8 @@
             </el-sub-menu>
             <el-sub-menu index="5">
                 <template #title>捐款資訊</template>
-                <!-- <nuxt-link :to="'/donate'"><el-menu-item index="donate">捐款支持-立即行動</el-menu-item></nuxt-link>
-                <nuxt-link :to="'/charity-sale'"><el-menu-item
+               <nuxt-link :to="'/donate'"><el-menu-item index="donate">捐款方式</el-menu-item></nuxt-link>
+                <!--  <nuxt-link :to="'/charity-sale'"><el-menu-item
                         index="charity-sale">版畫有限量，愛心無限亮</el-menu-item></nuxt-link> -->
             </el-sub-menu>
             <el-sub-menu index="6">

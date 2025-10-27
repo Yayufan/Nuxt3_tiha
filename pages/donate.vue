@@ -3,37 +3,38 @@
 
     <div>
 
-        <Breadcrumbs firstRoute="捐贈贊助" secoundRoute="捐款支持-立即行動"></Breadcrumbs>
+        <Breadcrumbs firstRoute="捐贈資訊" secoundRoute="捐款方式"></Breadcrumbs>
 
         <section class="common-section">
 
-            <h1 class="common-title">捐款支持-立即行動</h1>
+            <h1 class="common-title">捐款方式</h1>
 
-            <div class="function-bar">
+            <!-- <div class="function-bar">
                 <div class="donation-instructions common-label">捐款方式說明</div>
                 <div class="function-box">
                     <nuxt-link target="_blank" to="https://web.intersoft.com.tw/donation/OnlineOrgan/Default.aspx"
                         class="go-to-donate">我要捐款</nuxt-link>
                     <button class="personal-info-instructions" @click="drawer = true">個資說明</button>
                 </div>
-            </div>
+            </div> -->
 
             <div class="content-box">
 
                 <article class="paragraph">
-                    <h2 class="sub-title">郵政劃撥</h2>
+                    <h2 class="sub-title">劃撥帳戶
+                    </h2>
                     <div class="donation-info ">
                         <div class="common-label">戶名</div>
-                        <p class="content">社團法人中華民國器官捐贈協會</p>
+                        <p class="content">社團法人台灣腸保健康協會</p>
                     </div>
                     <div class="donation-info">
                         <div class="common-label">帳號</div>
-                        <p class="content">17424922</p>
+                        <p class="content">50480540</p>
                     </div>
                     <div class="number-mask">01</div>
                 </article>
 
-                <article class="paragraph">
+                <!-- <article class="paragraph">
                     <h2 class="sub-title">ATM</h2>
                     <div class="donation-info ">
                         <div class="common-label">戶名</div>
@@ -84,7 +85,7 @@
                     </div>
                     <div class="number-mask">05</div>
 
-                </article>
+                </article> -->
 
             </div>
 
