@@ -33,7 +33,7 @@
                     <p>衛教資訊</p>
                 </div>
                 <div class="link-item">
-                    <nuxt-link to="">
+                    <nuxt-link to="/donate">
                         <img src="@/assets/img/association-chronology-icon.png" alt="">
                     </nuxt-link>
                     <p>線上捐款</p>

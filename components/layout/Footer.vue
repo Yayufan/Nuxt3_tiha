@@ -1,43 +1,23 @@
 <template>
     <footer class="footer-box">
-        <!-- <div class="footer-info">
-            <div class="footer-item1">
-                <div class="info-box">
-                    <p class="info-content association-name">社團法人中華民國器官捐贈協會</p>
-                </div>
-                <div class="info-box">
-                    <p class="info-content"><img class="map-icon" src="@/assets/img/MapMarkedAlt.svg"
-                            alt="">地址:106台北市大安區信義路四段24號6樓</p>
-                </div>
-                <div class="info-box">
-                    <p class="info-content"><img class="phone-icon" src="@/assets/img/LocalPhoneRound.svg"
-                            alt="">電話:02-2702-5150</p>
-                    <p class="info-content"><img class="fax-icon" src="@/assets/img/fax.svg" alt="">傳真:02-2702-5393</p>
-                </div>
-                <div class="info-box">
-                    <p class="info-content"><img class="email-icon" src="@/assets/img/EmailRound.svg"
-                            alt="">聯絡信箱:office@organ.org.tw</p>
-                </div>
+        <div class="top-box">
+            <div class="logo-box">
+                <img src="/assets/img/logo.png" alt="">
             </div>
-            <div class="footer-item2">
-                <div class="info-box">
-                    <p class="info-content">立案字號: 台內社字第8221013號</p>
-                </div>
-                <div class="info-box">
-                    <p class="info-content">統一編號:76947385</p>
-                    <p class="info-content account">劃撥帳號:17424922</p>
-                </div>
-                <div class="info-box">
-                    <p class="info-content">戶名:社團法人中華民國器官捐贈協會</p>
-                </div>
-                <div class="info-box">
-                    <p class="info-content">訪客人數 {{ numberOfVisitors }} (當年度{{ numberOfVisitorsThisyear }}) <span class="update-time">更新日期 {{
-                        updateDate }}</span></p>
-                </div>
+            <div class="footer-info-box">
+                <p>
+                    會址:　台北市中山區南京東路二段１３２號２樓
+                </p>
+                <p>
+                    電話: 　0970-648-486 葉秘書　 
+                </p>
+                <p>
+                    Email:　tihaservice2024@gmail.com
+                </p>
             </div>
-        </div> -->
-        <div class="copyright" style="margin-top: 5%;" >
-            <p>Copyright © 2025 台灣腸保健康協會.All Rights Reserved</p>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2024 台灣腸保健康協會.All Rights Reserved</p>
         </div>
     </footer>
 </template>
@@ -49,6 +29,64 @@ const updateDate = ref('2024年10月21日')
 <style lang="scss" scoped>
 .footer-box {
     background-color: #EFEFEE;
+
+    .top-box {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        align-items: center;
+        width: 100%;
+        padding: 2% 0;
+
+        @media screen and (max-width:850px) {
+            flex-direction: column;
+            align-items: center;
+            padding: 5% 0;
+        }
+    }
+
+    .logo-box {
+        display: flex;
+        width: 30%;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        @media screen and (max-width:850px) {
+            flex: 0;
+            padding: 0;
+            margin-bottom: 2%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .footer-info-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 30%;
+        padding: 2% 0;
+        ;
+        gap: 0.5rem;
+
+        align-items: flex-start;
+        color: $main-content-color;
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+
+        @media screen and (max-width:850px) {
+            flex-direction: column;
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+            padding: 5% 0;
+        }
+    }
 
     .copyright {
         display: flex;
@@ -135,10 +173,11 @@ const updateDate = ref('2024年10月21日')
                     margin-right: 5px;
                 }
             }
-            
+
             .fax-icon,
             .account {
                 margin-left: 1.5rem;
+
                 @media screen and (max-width:850px) {
                     margin: 0;
                     margin-right: 5px;
@@ -150,11 +189,12 @@ const updateDate = ref('2024年10月21日')
                     margin-bottom: 12%;
                 }
             }
+
             .update-time {
                 @media screen and (max-width:850px) {
                     display: block;
                     text-align: center;
-                    
+
                 }
             }
         }

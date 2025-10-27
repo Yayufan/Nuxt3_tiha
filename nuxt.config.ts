@@ -70,8 +70,14 @@ export default defineNuxtConfig({
       }
     },
 
-    esbuild: {
-      drop: ['console', 'debugger'], // 移除 console 和 debugger
+    build: {
+      minify: 'terser', 
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
     },
   },
   devtools: {
