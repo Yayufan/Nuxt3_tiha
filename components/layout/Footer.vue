@@ -9,10 +9,10 @@
                     會址:　台北市中山區南京東路二段１３２號２樓
                 </p>
                 <p>
-                    電話: 　0970-648-486 葉秘書　 
+                    會員服務Email:　tihaservice2024@gmail.com
                 </p>
                 <p>
-                    Email:　tihaservice2024@gmail.com
+                    行政聯絡窗口Email:　tiha20250521@gmail.com
                 </p>
             </div>
         </div>
@@ -70,7 +70,7 @@ const updateDate = ref('2024年10月21日')
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 30%;
+        width: 40%;
         padding: 2% 0;
         ;
         gap: 0.5rem;

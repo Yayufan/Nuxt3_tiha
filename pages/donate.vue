@@ -21,15 +21,25 @@
             <div class="content-box">
 
                 <article class="paragraph">
-                    <h2 class="sub-title">劃撥帳戶
+                    <h2 class="sub-title">捐款帳戶
                     </h2>
                     <div class="donation-info ">
                         <div class="common-label">戶名</div>
                         <p class="content">社團法人台灣腸保健康協會</p>
                     </div>
+
+                    <!-- 額外新增 -->
+                    <div class="donation-info  ">
+                        <div class="common-label">搭配銀行</div>
+                        <div class="content">
+                            <p>台北富邦銀行（代碼：012） </p>
+                            <p>南京東路分行（分行代碼：7026）</p>
+                        </div>
+                    </div>
+
                     <div class="donation-info">
                         <div class="common-label">帳號</div>
-                        <p class="content">50480540</p>
+                        <p class="content">82120000244940</p>
                     </div>
                     <div class="number-mask">01</div>
                 </article>
@@ -377,6 +387,16 @@ const drawer = ref(false)
 
                 }
 
+                .common-no-label {
+                    min-width: 4rem;
+                    text-align: center;
+                    margin-right: 1rem;
+
+                    @media screen and (max-width:480px) {
+                        padding: 2px 4px;
+                    }
+                }
+
 
 
                 ol {
@@ -399,6 +419,7 @@ const drawer = ref(false)
                     }
 
                 }
+
 
                 li::before {
                     content: counter(item);
