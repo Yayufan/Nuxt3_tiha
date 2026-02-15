@@ -90,7 +90,7 @@ const menuItem = [
     {
         title: '衛教資訊',
         subMenu: [
-            // { title: '器捐學堂', link: '/organ-donation' },
+            { title: '案例分享', link: '/case-sharing' },
             // { title: '器捐捐贈會刊', link: '/journal' },
             // { title: '影音專區', link: '/video-area' },
             // { title: '文宣下載', link: '/brochure-download' },
@@ -107,7 +107,7 @@ const menuItem = [
     {
         title: '捐款資訊',
         subMenu: [
-            // { title: '捐款支持-立即行動', link: '/donate' },
+            { title: '捐款方式', link: '/donate' },
             // { title: '版畫有限量，愛心無限亮', link: '/charity-sale' }
         ]
     },

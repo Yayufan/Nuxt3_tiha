@@ -282,8 +282,7 @@ const drawer = ref(false)
         }
 
         @media screen and (max-width:480px) {
-            margin-left: 1%;
-            margin-right: 1%;
+            margin: 6% 1%;
         }
 
 
