@@ -5,11 +5,11 @@
 
 
 
-        <Breadcrumbs firstRoute="衛教與關懷" secoundRoute="病友故事"></Breadcrumbs>
+        <Breadcrumbs firstRoute="衛教與關懷" secoundRoute="衛教資訊"></Breadcrumbs>
 
         <section class="common-section">
 
-            <h1 class="common-title">病友故事</h1>
+            <h1 class="common-title">衛教資訊</h1>
 
             <div class="content-box">
 
@@ -74,7 +74,7 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
 let currentPage = ref(page)
 let currentSize = ref(size)
 
-const GROUP = "caseSharing"
+const GROUP = "healthEducation"
 
 let articleList = reactive({
     pages: 1,

@@ -14,10 +14,20 @@
                 <p>
                     行政聯絡窗口Email:　tiha20250521@gmail.com
                 </p>
+
             </div>
         </div>
         <div class="copyright">
-            <p>Copyright © 2024 台灣腸保健康協會.All Rights Reserved</p>
+            <div>Copyright © 2024 台灣腸保健康協會.All Rights Reserved</div>
+            <div class="community-link-box">
+                <a href="https://www.facebook.com/share/1GdmMZYLwp/?mibextid=wwXIfr"><img class="link-img fb-link"
+                        src="/img/facebook-icon.svg"></a>
+                <a href="https://www.instagram.com/tiha_health.tw?igsh=YTAweGp2N296enk3"><img class="link-img ig-link"
+                        src="/img/instagram-icon.svg"></a>
+                <a href="https://www.threads.com/@tiha_health.tw?igshid=NTc4MTIwNjQ2YQ=="><img
+                        class="link-img threads-link" src="/img/threads-icon.svg"></a>
+            </div>
+
         </div>
     </footer>
 </template>
@@ -34,7 +44,6 @@ const updateDate = ref('2024年10月21日')
         display: flex;
         justify-content: center;
         gap: 2rem;
-
         align-items: center;
         width: 100%;
         padding: 2% 0;
@@ -42,7 +51,7 @@ const updateDate = ref('2024年10月21日')
         @media screen and (max-width:850px) {
             flex-direction: column;
             align-items: center;
-            padding: 5% 0;
+            gap: 0;
         }
     }
 
@@ -72,7 +81,6 @@ const updateDate = ref('2024年10月21日')
         justify-content: center;
         width: 40%;
         padding: 2% 0;
-        ;
         gap: 0.5rem;
 
         align-items: flex-start;
@@ -86,15 +94,40 @@ const updateDate = ref('2024年10月21日')
             letter-spacing: 0.1rem;
             padding: 5% 0;
         }
+
+
+
     }
 
     .copyright {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         color: $main-content-color;
         font-size: 1rem;
         padding-bottom: 5%;
         letter-spacing: 0.2rem;
+
+        .community-link-box {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 50%;
+            text-align: center;
+
+            .link-img {
+                width: 2.5rem;
+                margin: 1% 5% 0 5%;
+            }
+
+            .fb-link {
+                width: 2.7rem;
+            }
+
+            .threads-link {
+                width: 2.3rem;
+            }
+        }
 
         @media screen and (max-width:850px) {
             // flex-direction: column;
@@ -107,6 +140,7 @@ const updateDate = ref('2024年10月21日')
 .footer-info {
     background-color: #EFEFEE;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     width: 100%;
     letter-spacing: 0.1rem;

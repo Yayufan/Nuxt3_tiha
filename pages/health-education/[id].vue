@@ -3,7 +3,7 @@
 
     <section class="article-section">
 
-        <Breadcrumbs2 firstRoute="病友故事" :secoundRoute="article.title"></Breadcrumbs2>
+        <Breadcrumbs2 firstRoute="衛教資訊" :secoundRoute="article.title"></Breadcrumbs2>
 
         <div class="title-box">
             <div class="title">{{ article.title }}</div>

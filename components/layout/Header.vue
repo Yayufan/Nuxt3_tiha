@@ -75,22 +75,26 @@ const menuItem = [
     {
         title: '關於我們',
         subMenu: [
-            {title: '宗旨任務',link: '/purpose'},
-            {title: '協會組織名單',link: '/organization-list'},
+            {title: '成立宗旨',link: '/purpose'},
+            {title: '組織架構',link: '/organization-list'},
+            {title: '發展歷程',link: '/development-history'},
+            {title: '年度重點企劃與展望',link: '/plans-and-outlook'}
         ]
     },
     {
-        title: '訊息看板',
+        title: '活動消息',
         subMenu: [
             { title: '最新消息', link: '/news' },
             { title: '活動花絮', link: '/event-highlights' },
+            { title: '媒體報導', link: '/media-reports' },
             // { title: '合作申請單', link: '/cooperation' }
         ]
     },
     {
-        title: '衛教資訊',
+        title: '衛教與關懷',
         subMenu: [
-            { title: '案例分享', link: '/case-sharing' },
+            { title: '衛教資訊', link: '/health-education' },
+            { title: '病友故事', link: '/case-sharing' },
             // { title: '器捐捐贈會刊', link: '/journal' },
             // { title: '影音專區', link: '/video-area' },
             // { title: '文宣下載', link: '/brochure-download' },

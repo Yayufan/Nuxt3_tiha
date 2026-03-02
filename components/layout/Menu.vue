@@ -11,22 +11,24 @@
             <el-sub-menu index="1">
                 <template #title class="firstTitle">關於我們</template>
                 <nuxt-link :to="'/purpose'"><el-menu-item index="purpose">成立宗旨</el-menu-item></nuxt-link>
-                <nuxt-link :to="'/organization-list'"><el-menu-item index="organization-list">協會組織名單</el-menu-item></nuxt-link>
-                
+                <nuxt-link :to="'/organization-list'"><el-menu-item index="organization-list">組織架構</el-menu-item></nuxt-link>
+                <nuxt-link :to="'/development-history'"><el-menu-item index="development-history">發展歷程</el-menu-item></nuxt-link>
+                <nuxt-link :to="'/plans-and-outlook'"><el-menu-item index="plans-and-outlook">年度重點企劃與展望</el-menu-item></nuxt-link>
             </el-sub-menu>
 
        
             <el-sub-menu index="2">
-                <template #title>訊息看板</template>
+                <template #title>活動消息</template>
                 <nuxt-link   to="/news" ><el-menu-item index="news">最新消息</el-menu-item></nuxt-link>
                 <nuxt-link   to="/event-highlights" ><el-menu-item
                         index="event-highlights">活動花絮</el-menu-item></nuxt-link>
-                <!-- <nuxt-link :to="'/cooperation'"><el-menu-item index="cooperation">合作申請單</el-menu-item></nuxt-link> -->
+                <nuxt-link :to="'/media-reports'"><el-menu-item index="media-reports">媒體報導</el-menu-item></nuxt-link>
             </el-sub-menu>
 
             <el-sub-menu index="3">
-                <template #title>衛教資訊</template>
-                 <nuxt-link to="/case-sharing"><el-menu-item index="case-sharing">案例分享</el-menu-item></nuxt-link>
+                <template #title>衛教與關懷</template>
+                 <nuxt-link to="/health-education"><el-menu-item index="health-education">衛教資訊</el-menu-item></nuxt-link>
+                 <nuxt-link to="/case-sharing"><el-menu-item index="case-sharing">病友故事</el-menu-item></nuxt-link>
                 
                  <!-- <nuxt-link to="/journal"><el-menu-item index="journal">器捐捐贈會刊</el-menu-item></nuxt-link>
                 <nuxt-link to="/video-area"><el-menu-item index="video-area">影音專區</el-menu-item></nuxt-link>

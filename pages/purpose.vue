@@ -3,13 +3,13 @@
 
     <div>
 
-        <Breadcrumbs firstRoute="關於我們" secoundRoute="宗旨任務"></Breadcrumbs>
+        <Breadcrumbs firstRoute="關於我們" secoundRoute="成立宗旨"></Breadcrumbs>
 
         <section class="common-section">
 
 
 
-            <h1 class="common-title">宗旨任務</h1>
+            <h1 class="common-title">成立宗旨</h1>
 
             <div class="content-box">
 

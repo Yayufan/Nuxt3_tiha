@@ -30,17 +30,27 @@
 
                     <!-- 額外新增 -->
                     <div class="donation-info  ">
-                        <div class="common-label">搭配銀行</div>
-                        <div class="content">
-                            <p>台北富邦銀行（代碼：012） </p>
-                            <p>南京東路分行（分行代碼：7026）</p>
-                        </div>
+                        <div class="common-label">銀行名稱</div>
+                        <p class="content">台北富邦銀行（012） </p>
+                    </div>
+
+                    <div class="donation-info  ">
+                        <div class="common-label">分行名稱</div>
+                        <p class="content">南京東路分行（7026）
+                        <p></p>
+                        </p>
                     </div>
 
                     <div class="donation-info">
                         <div class="common-label">帳號</div>
                         <p class="content">82120000244940</p>
                     </div>
+
+                    <div class="donation-info">
+                        <div>重要！！　請於捐款後請填寫<a class="donate-google-form" href="https://forms.gle/hWeAgq4dZYxom9uk6"> 捐款回報表單
+                        </a>以便協會核對帳款並寄送收據與小禮物。</div>
+                    </div>
+
                     <div class="number-mask">01</div>
                 </article>
 
@@ -377,8 +387,10 @@ const drawer = ref(false)
 
                 .common-label {
                     min-width: 4rem;
-                    text-align: center;
                     margin-right: 1rem;
+                    text-align: justify;
+                    text-align-last: justify;
+
 
                     @media screen and (max-width:480px) {
                         padding: 2px 4px;
@@ -452,6 +464,12 @@ const drawer = ref(false)
 
 
 
+            }
+
+            .donate-google-form {
+                color: rgb(39, 39, 238);
+                text-decoration: underline;
+                margin: 0 2px;
             }
 
         }

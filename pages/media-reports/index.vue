@@ -3,13 +3,11 @@
 
     <div>
 
-
-
-        <Breadcrumbs firstRoute="衛教與關懷" secoundRoute="病友故事"></Breadcrumbs>
+        <Breadcrumbs firstRoute="活動消息" secoundRoute="媒體報導"></Breadcrumbs>
 
         <section class="common-section">
 
-            <h1 class="common-title">病友故事</h1>
+            <h1 class="common-title">媒體報導</h1>
 
             <div class="content-box">
 
@@ -17,9 +15,7 @@
 
                     <article class="article-item" v-for="(item, index) in articleList.records " :key="item.articleId">
 
-                        <nuxt-link class="article-item-link"
-                            :to="{ name: 'case-sharing-id', params: { id: item.articleId } }">
-
+                        <nuxt-link class="article-item-link" :to="{ name: 'news-id', params: { id: item.articleId } }">
                             <div class="article-img-box">
                                 <img class="article-img" :src="`/minio${item.coverThumbnailUrl}`">
                             </div>
@@ -33,7 +29,6 @@
                         </nuxt-link>
 
                     </article>
-
                 </transition-group>
 
                 <!-- 
@@ -45,10 +40,7 @@
                         :default-page-size="Number(articleList.size)" v-model:current-page="currentPage"
                         :hide-on-single-page="true" :pager-count="5" />
                 </div>
-
             </div>
-
-
         </section>
 
     </div>
@@ -57,13 +49,13 @@
 
 <script setup lang='ts'>
 
+import { descriptionProps } from 'element-plus';
 import { ref, reactive } from 'vue'
 import Breadcrumbs from '@/components/layout/Breadcrumbs.vue'
 
-
 //根據裝置預設顯示數量
 // const defaultSize = ref(useState('currentSize', () => useIsMobile().value ? 8 : 8))
-const defaultSize = ref(useIsMobile().value ? 4 : 9)
+const defaultSize = ref(useIsMobile().value ? 4 : 4)
 
 //拿到更新路由分頁參數 以及 獲取當前分頁參數的function
 const updatePaginationParams = useUpdatePaginationParams()
@@ -74,7 +66,7 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
 let currentPage = ref(page)
 let currentSize = ref(size)
 
-const GROUP = "caseSharing"
+const GROUP = "mediaReports"
 
 let articleList = reactive({
     pages: 1,
@@ -126,7 +118,6 @@ watch(currentPage, (value, oldValue) => {
 })
 
 
-
 </script>
 
 <style scoped lang="scss">
@@ -152,93 +143,98 @@ watch(currentPage, (value, oldValue) => {
 
         @media screen and (max-width:481px) {
             margin-left: 0;
-
         }
+
     }
 
     .content-box {
         margin-left: 10%;
         margin-right: 10%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
 
         @media screen and (max-width:481px) {
             margin-left: 0;
-            margin-right: 0;
         }
 
         .article-item {
-            margin-bottom: 5%;
-            width: 29%;
-            padding: 1rem 1rem;
+            margin: 3% 0;
             transition: 0.5s;
 
-            @media screen and (max-width:850px) {
-                width: 43%;
-            }
-
-            @media screen and (max-width:480px) {
-                width: 42%;
-            }
-
             .article-item-link {
+                display: flex;
+            }
 
-                //當滑鼠碰到這篇文章時,改變字體顏色+圖片放大
-                &:hover {
-                    cursor: pointer;
-                    background: $main-hover-bg;
+            //當滑鼠碰到這篇文章時,改變字體顏色+圖片放大
+            &:hover {
+                cursor: pointer;
+                background: $main-hover-bg;
+                
+                .article-info-box{
+                    .article-title{
+                        color: $main-hover-text;
+                    }
 
-                    .article-img-box {
-                        img {
-                            scale: (1.05);
-                        }
+                    .article-description{
+                        color: $main-hover-text;
                     }
                 }
-
-
 
                 .article-img-box {
                     img {
-                        transition: 0.5s;
-                        aspect-ratio: 4/3;
-                        width: 100%;
-                        /* 也可以換成任何你想要的寬度 */
-                        display: block;
-                        /* 新增這行 */
-                        object-fit: fill;
-                        object-position: top center;
-                        border-radius: 16px;
+                        scale: (1.05);
                     }
                 }
+            }
 
-                .article-info-box {
-                    text-align: left;
+            @media screen and (max-width:481px) {
+                margin: 7% 0;
+            }
 
-                    .article-title {
-                        font-size: $inner-box-title-font-size;
-                        margin: 0.8rem 0;
-                        color: $main-content-color;
-                    }
 
-                    .article-description {
-                        color: $main-content-color;
-                        font-size: $inner-box-font-size;
-                        //這組合是超過三行時使用...
-                        display: -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 3;
-                        overflow: hidden;
+            .article-img-box {
+                max-width: 15rem;
+                min-width: 145px;
 
-                    }
-
+                @media screen and (max-width:850px) {
+                    max-width: 150px;
                 }
 
 
+                img {
+                    aspect-ratio: 4 / 3;
+                    width: 100%;
+                    /* 也可以換成任何你想要的寬度 */
+                    display: block;
+                    /* 新增這行 */
+                    object-position: top center;
+                    border-radius: 16px;
+                    transition: 0.5s;
+                }
 
             }
-        }
 
+            .article-info-box {
+                margin-left: 1rem;
+
+                .article-title {
+                    font-size: $inner-box-title-font-size;
+                    margin: 0.3rem 0;
+                    color: $main-content-color;
+                }
+
+                .article-description {
+                    color: $main-content-color;
+                    font-size: $inner-box-font-size;
+
+                    @media screen and (max-width:480px) {
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 6;
+                        overflow: hidden;
+                    }
+
+                }
+            }
+        }
     }
 }
 </style>

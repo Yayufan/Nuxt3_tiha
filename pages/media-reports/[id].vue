@@ -3,7 +3,7 @@
 
     <section class="article-section">
 
-        <Breadcrumbs2 firstRoute="病友故事" :secoundRoute="article.title"></Breadcrumbs2>
+        <Breadcrumbs2 firstRoute="媒體報導" :secoundRoute="article.title"></Breadcrumbs2>
 
         <div class="title-box">
             <div class="title">{{ article.title }}</div>
@@ -35,9 +35,9 @@ const route = useRoute();
 
 //預設假資料
 const article = reactive({
-    type: '',
-    title: '',
-    announcementDate: ''
+    type: '一般公告',
+    title: '靜態展示-113年中秋休診公告',
+    announcementDate: '2024-10-08'
 })
 const htmlContent = ref('')
 
