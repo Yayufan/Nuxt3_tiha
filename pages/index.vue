@@ -27,7 +27,7 @@
                     <p>最新消息</p>
                 </div>
                 <div class="link-item">
-                    <nuxt-link to="/case-sharing">
+                    <nuxt-link to="/health-education">
                         <img src="@/assets/img/become-member-icon.png" alt="">
                     </nuxt-link>
                     <p>衛教資訊</p>
