@@ -67,6 +67,17 @@
                             <el-input class="email-input" v-model="form.email" type="email"></el-input>
                         </el-form-item>
 
+                        <!-- 隱私權政策同意 check -->
+                        <el-form-item class="form-item1" prop="approvePrivacy">
+                            <el-checkbox v-model="form.approvePrivacy">
+                                我已閱讀並同意
+                                <span class="privacy-text" @click="privacyDialogVisible = true">
+                                    隱私權政策
+                                </span>
+                            </el-checkbox>
+                        </el-form-item>
+
+
                         <div class="captcha-box">
                             <client-only>
                                 <img v-if="captchaImg" :src="captchaImg" @click="refreshCaptcha" alt="點擊刷新驗證碼"
@@ -76,12 +87,7 @@
                                 <el-input v-model="form.verificationCode" type="text"></el-input>
                             </el-form-item>
                         </div>
-                        <!-- <div class="instructions-div">
-                        <el-form-item>
-                            <el-checkbox v-model="approveInstructions" class="instructions"><u
-                                    @click="drawer = true">我已閱讀並同意說明事項</u></el-checkbox>
-                        </el-form-item>
-                    </div> -->
+
                         <div class="submit-section">
                             <el-form-item>
                                 <el-button class="submit" @click="submitForm(ruleFormRef)">送出資料</el-button>
@@ -90,8 +96,30 @@
                         </div>
                     </el-form>
                 </div>
-
             </div>
+
+
+            <!-- Dialog -->
+            <el-dialog v-model="privacyDialogVisible" title="隱私權政策" width="60%" class="privacy-dialog" draggable
+                append-to-body>
+                <div class="privacy-content">
+                    <h3>隱私權保護聲明</h3>
+                    <p>歡迎您加入「社團法人台灣腸保健康協會」（以下簡稱本會），本會非常重視您的隱私權...</p>
+
+                    <h4>一、個人資料之搜集</h4>
+                    <p>當您註冊成為本會會員時，我們會根據服務需求請您提供姓名、身分證字號、聯絡方式等必要資訊。</p>
+
+                    <h4>二、資料利用與保護</h4>
+                    <p>本會僅於內部會務管理及相關活動通知之目的內使用您的資料，除非經您同意或法律規定，否則不會提供給第三方。</p>
+
+                    <p v-for="i in 5" :key="i">（補充條款範例文字...）</p>
+                </div>
+                <template #footer>
+                    <span class="dialog-footer">
+                        <el-button type="primary" @click="privacyDialogVisible = false">關閉</el-button>
+                    </span>
+                </template>
+            </el-dialog>
 
         </div>
     </template>
@@ -173,6 +201,14 @@ const formRules = reactive<FormRules<form>>({
             required: true,
             message: '請輸入手機號碼',
             trigger: 'blur'
+        },
+        {
+            // 1. 必須是 09 開頭
+            // 2. 後面接 8 位數字 (總共 10 碼)
+            // 3. ^...$ 確保從頭到尾都不包含空格或特殊符號
+            pattern: /^09\d{8}$/,
+            message: '格式錯誤，請輸入 09 開頭的 10 碼數字（不含空格或符號）',
+            trigger: 'blur'
         }
     ],
     gender: [
@@ -196,6 +232,19 @@ const formRules = reactive<FormRules<form>>({
         },
     ],
 
+    approvePrivacy: [
+        {
+            validator: (rule, value, callback) => {
+                if (!value) {
+                    callback(new Error('請閱讀並勾選同意隱私權政策'));
+                } else {
+                    callback();
+                }
+            },
+            trigger: 'change',
+        },
+    ],
+
 })
 
 interface form {
@@ -211,7 +260,8 @@ interface form {
     email: string,
     contactAddress: string,
     verificationKey: string,
-    verificationCode: string
+    verificationCode: string,
+    approvePrivacy: boolean; // 新增
 }
 
 const form = reactive<form>({
@@ -227,7 +277,8 @@ const form = reactive<form>({
     email: '',
     contactAddress: '',
     verificationKey: '',
-    verificationCode: ''
+    verificationCode: '',
+    approvePrivacy: false, // 初始值為 false
 })
 
 
@@ -444,6 +495,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
             let res = await insertMemberForm()
             if (res.code != 200) {
                 ElMessage.error(res.msg)
+                refreshCaptcha()
                 return
             }
             // ElMessage.success("註冊成功")
@@ -491,14 +543,24 @@ const refreshCaptcha = async () => {
     }
 }
 
+// 2026/03/23補充
+// 1. 新增控制 Dialog 顯示的變數
+const privacyDialogVisible = ref(false)
+
+
 onMounted(() => {
     refreshCaptcha()
-
 })
 
 </script>
 
 <style lang="scss" scoped>
+// 2026/03/23補充
+.privacy-text {
+    color: #2169e5;
+}
+
+// 原定
 .common-section {
     width: $common-section-width;
     margin: $common-section-margin;
@@ -631,6 +693,22 @@ onMounted(() => {
                     }
                 }
 
+                .el-checkbox {
+
+                    :deep(.el-checkbox__label) {
+                        font-size: 1.3rem;
+                        color: black;
+
+                        @media screen and (max-width:850px) {
+                            font-size: 0.9rem;
+                            width: 60% !important;
+
+                        }
+                    }
+
+
+                }
+
                 .sex-other {
                     width: 10%;
 
@@ -758,21 +836,6 @@ onMounted(() => {
                         margin-right: 0.3rem;
 
                     }
-                }
-            }
-
-            .instructions-div {
-                margin-top: 3rem;
-                display: flex;
-                justify-content: center;
-
-                :deep(.el-checkbox__label) {
-                    color: $main-color;
-                    font-size: 1.3rem;
-                }
-
-                :deep(.el-checkbox__inner) {
-                    border-radius: 25px;
                 }
             }
 
