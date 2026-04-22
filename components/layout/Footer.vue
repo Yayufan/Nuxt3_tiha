@@ -12,7 +12,8 @@
                     會員服務Email:　tihaservice2024@gmail.com
                 </p>
                 <p>
-                    行政聯絡窗口Email:　tiha20250521@gmail.com
+                    <!-- 行政聯絡窗口Email:　tiha20250521@gmail.com -->
+                    行政聯絡窗口Email:　newtiha@gmail.com
                 </p>
 
             </div>
