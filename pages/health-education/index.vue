@@ -15,7 +15,7 @@
 
                 <transition-group name="pagination">
 
-                    <article class="article-item" v-for="(item, index) in articleList.records " :key="item.articleId">
+                    <article class="article-item" v-for="(item, index) in articleList.records" :key="item.articleId">
 
                         <nuxt-link class="article-item-link"
                             :to="{ name: 'case-sharing-id', params: { id: item.articleId } }">
@@ -219,6 +219,13 @@ watch(currentPage, (value, oldValue) => {
                         font-size: $inner-box-title-font-size;
                         margin: 0.8rem 0;
                         color: $main-content-color;
+                        /* 強制截斷標題，最多顯示 2 行 */
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                        word-break: break-all;
+                        /* 確保長數字或英文也會斷行 */
                     }
 
                     .article-description {
@@ -229,6 +236,8 @@ watch(currentPage, (value, oldValue) => {
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 3;
                         overflow: hidden;
+                        word-break: break-all;
+                        /* 確保長數字或英文也會斷行 */
 
                     }
 

@@ -20,6 +20,7 @@
         </div>
         <div class="copyright">
             <div>Copyright © 2024 台灣腸保健康協會.All Rights Reserved</div>
+            <div>累積訪問次數：{{ numberOfVisitors }}</div>
             <div class="community-link-box">
                 <a href="https://www.facebook.com/share/1GdmMZYLwp/?mibextid=wwXIfr"><img class="link-img fb-link"
                         src="/img/facebook-icon.svg"></a>
@@ -33,9 +34,19 @@
     </footer>
 </template>
 <script setup lang="ts">
-const numberOfVisitors = ref(3977434)
-const numberOfVisitorsThisyear = ref(156520)
+const numberOfVisitors = ref(0)
 const updateDate = ref('2024年10月21日')
+
+onMounted(async () => {
+    try {
+        const response = await  CSRrequest.get('/setting/get-view-count');
+        numberOfVisitors.value = response.data.viewCount || 0;
+    } catch (error) {
+        console.error('Failed to fetch view count:', error);
+    }
+})
+
+
 </script>
 <style lang="scss" scoped>
 .footer-box {

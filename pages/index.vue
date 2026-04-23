@@ -17,6 +17,31 @@
             <img src="@/assets/img/carousel-item1.jpg">
         </div>
 
+        <!-- 衛教資訊信息 -->
+        <section class="home-health-section">
+            <div class="section-header">
+                <h2 class="common-title">衛教資訊</h2>
+                <nuxt-link to="/health-education" class="more-link">查看更多</nuxt-link>
+            </div>
+
+            <div class="health-feature-grid">
+                <article v-for="(item, index) in homeArticles" :key="item.articleId"
+                    :class="['health-card', `pos-${index}`]">
+                    <nuxt-link :to="{ name: 'case-sharing-id', params: { id: item.articleId } }">
+                        <div class="card-img-box">
+                            <img :src="`/minio${item.coverThumbnailUrl}`" class="article-img">
+                        </div>
+                        <div class="card-info-box">
+                            <h3 class="article-title">{{ item.title }}</h3>
+                            <p class="article-description">{{ item.description }}</p>
+                        </div>
+                    </nuxt-link>
+                </article>
+            </div>
+        </section>
+
+
+
         <div class="join-us-board">
             <p class="title">快速連結</p>
             <div class="icon-link-box">
@@ -53,7 +78,6 @@
             </div>
         </div>
 
-
     </main>
 </template>
 
@@ -73,7 +97,23 @@ const defaultSize = ref(useIsMobile().value ? 3 : 5)
 const { page, size } = useGetPaginationParams(defaultSize.value)
 
 
+const GROUP = "healthEducation"
+const homeArticles = ref<any[]>([])
 
+// 獲取首頁前 6 筆資料
+const getHomeArticles = async () => {
+    let { data: response } = await SSRrequest.get(`article/${GROUP}/pagination`, {
+        params: {
+            page: 1,
+            size: 6 // 固定抓取 6 筆
+        }
+    })
+    if (response.value?.data) {
+        homeArticles.value = response.value.data.records
+    }
+}
+
+await getHomeArticles()
 
 
 
@@ -146,7 +186,134 @@ const { page, size } = useGetPaginationParams(defaultSize.value)
         }
     }
 
+    // --- 衛教區塊優化版 ---
+    // --- 衛教區塊 1/2 : 1/2 平分版 ---
+    .home-health-section {
+        background-color: #fdfaf8;
+        padding: 60px 10%;
 
+        @media screen and (max-width: 1200px) {
+            padding: 40px 5%;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+
+            .common-title {
+                color: #E99B67;
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin: 0;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -17px;
+                    left: 0;
+                    width: 50px;
+                    height: 4px;
+                    background: #E99B67;
+                }
+            }
+
+            .more-link {
+                color: #91715F;
+                font-size: 0.95rem;
+                text-decoration: none;
+                padding: 5px 15px;
+                border: 1px solid #d3c5bd;
+                border-radius: 20px;
+                transition: 0.3s;
+
+                &:hover {
+                    background: #91715F;
+                    color: #fff;
+                }
+            }
+        }
+
+        .health-feature-grid {
+            display: grid;
+            /* 定義 3 欄，每欄平分空間 (1:1:1) */
+            grid-template-columns: repeat(3, 1fr);
+            /* 定義 2 列 (高度可以設定 auto 讓它隨內容伸縮，或是固定高度) */
+            grid-template-rows: repeat(2, auto);
+            /* 設定格子之間的間距 */
+            gap: 20px;
+
+            @media screen and (max-width: 850px) {
+                grid-template-columns: repeat(2, 1fr);
+                /* 定義 2 列 (高度可以設定 auto 讓它隨內容伸縮，或是固定高度) */
+                grid-template-rows: repeat(1, auto);
+            }
+
+            .health-card {
+                background: #fff;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+                transition: transform 0.4s, box-shadow 0.4s;
+
+                &:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 10px 25px rgba(145, 113, 95, 0.15);
+                }
+
+                a {
+                    text-decoration: none;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .card-img-box {
+                    width: 100%;
+                    flex: 1;
+                    overflow: hidden;
+                    background: #f0f0f0;
+
+                    img {
+                        width: 100%;
+                        transition: 0.5s;
+                    }
+                }
+
+                .card-info-box {
+                    padding: 15px;
+
+                    .article-title {
+                        color: #333;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        margin-bottom: 8px;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        line-height: 1.4;
+                    }
+
+                    .article-description {
+                        color: #666;
+                        font-size: 0.85rem;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        line-height: 1.5;
+                    }
+                }
+
+            }
+
+        }
+    }
 
     .join-us-board {
         width: 100%;
