@@ -76,9 +76,9 @@ const menuItem = [
         title: '關於我們',
         subMenu: [
             { title: '成立宗旨', link: '/purpose' },
-            { title: '組織架構', link: '/organization-list' },
+            { title: '組織架構', link: '/organization' },
             { title: '發展歷程', link: '/development-history' },
-            { title: '年度重點企劃與展望', link: '/plans-and-outlook' }
+            { title: '年度重點企劃與展望', link: '/roadmap' }
         ]
     },
     {

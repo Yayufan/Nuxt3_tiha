@@ -11,12 +11,10 @@
             <el-sub-menu index="1">
                 <template #title class="firstTitle">關於我們</template>
                 <nuxt-link :to="'/purpose'"><el-menu-item index="purpose">成立宗旨</el-menu-item></nuxt-link>
-                <nuxt-link :to="'/organization-list'"><el-menu-item
-                        index="organization-list">組織架構</el-menu-item></nuxt-link>
+                <nuxt-link :to="'/organization'"><el-menu-item index="organization">組織架構</el-menu-item></nuxt-link>
                 <nuxt-link :to="'/development-history'"><el-menu-item
                         index="development-history">發展歷程</el-menu-item></nuxt-link>
-                <nuxt-link :to="'/plans-and-outlook'"><el-menu-item
-                        index="plans-and-outlook">年度重點企劃與展望</el-menu-item></nuxt-link>
+                <nuxt-link :to="'/roadmap'"><el-menu-item index="roadmap">年度重點企劃與展望</el-menu-item></nuxt-link>
 
                 <el-sub-menu index="friendly-links">
                     <template #title>友善連結</template>

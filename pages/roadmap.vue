@@ -3,7 +3,7 @@
 
     <div>
 
-        <Breadcrumbs firstRoute="訊息看板" secoundRoute="發展歷程"></Breadcrumbs>
+        <Breadcrumbs firstRoute="訊息看板" secoundRoute="年度重點企劃與展望"></Breadcrumbs>
 
         <section class="common-section">
 
@@ -37,16 +37,16 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs.vue'
 
 //SEO
 useSeoMeta({
-    title: '發展歷程',
+    title: '年度重點企劃與展望',
     titleTemplate: '%s | 台灣腸保健康協會',
-    description: '了解本協會的發展歷程與重要里程碑。',
-    ogTitle: '發展歷程｜台灣腸保健康協會',
-    ogDescription: '探索本協會的發展歷程，認識我們的重要里程碑與成就。',
-    keywords: '發展歷程, 腸保健康'
+    description: '了解本協會的年度重點企劃與未來展望。',
+    ogTitle: '年度重點企劃與展望｜台灣腸保健康協會',
+    ogDescription: '探索本協會的年度重點企劃，認識我們的未來發展方向。',
+    keywords: '年度重點企劃, 未來展望, 腸保健康'
 })
 
 const route = useRoute();
-const path = ref("development-history")
+const path = ref("roadmap")
 
 //獲取當前domain
 const domain = useRuntimeConfig().public.domain
@@ -58,7 +58,7 @@ const articleAttachmentList = reactive<Record<string, any>[]>([])
 const singlePageArticle = reactive({
     singlePageArticleId: '',
     path: '',
-    title: '發展歷程',
+    title: '年度重點企劃與展望',
     announcementDate: '2024-10-08'
 })
 const htmlContent = ref('')
