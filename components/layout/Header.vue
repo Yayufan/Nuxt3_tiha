@@ -75,10 +75,10 @@ const menuItem = [
     {
         title: '關於我們',
         subMenu: [
-            {title: '成立宗旨',link: '/purpose'},
-            {title: '組織架構',link: '/organization-list'},
-            {title: '發展歷程',link: '/development-history'},
-            {title: '年度重點企劃與展望',link: '/plans-and-outlook'}
+            { title: '成立宗旨', link: '/purpose' },
+            { title: '組織架構', link: '/organization' },
+            { title: '發展歷程', link: '/development-history' },
+            { title: '年度重點企劃與展望', link: '/roadmap' }
         ]
     },
     {
@@ -120,6 +120,13 @@ const menuItem = [
         subMenu: [
             { title: '會員註冊', link: '/registration' },
             { title: '會員登入', link: '' },
+        ]
+    },
+    {
+        title: '友站連結',
+        subMenu: [
+            { title: 'Google', link: 'https://www.google.com' },
+            { title: 'GitHub', link: 'https://github.com' },
         ]
     }
 ]
