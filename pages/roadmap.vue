@@ -3,7 +3,7 @@
 
     <div>
 
-        <Breadcrumbs firstRoute="訊息看板" secoundRoute="年度重點企劃與展望"></Breadcrumbs>
+        <Breadcrumbs firstRoute="關於我們" secoundRoute="年度重點企劃與展望"></Breadcrumbs>
 
         <section class="common-section">
 

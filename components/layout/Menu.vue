@@ -19,7 +19,7 @@
                 <el-sub-menu index="friendly-links">
                     <template #title>友善連結</template>
 
-                    <a href="https://www.google.com" target="_blank">
+                    <!-- <a href="https://www.google.com" target="_blank">
                         <el-menu-item index="link-google">Google</el-menu-item>
                     </a>
 
@@ -29,7 +29,7 @@
 
                     <a href="https://openai.com" target="_blank">
                         <el-menu-item index="link-openai"> OpenAI</el-menu-item>
-                    </a>
+                    </a> -->
 
                 </el-sub-menu>
             </el-sub-menu>

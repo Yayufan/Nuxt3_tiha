@@ -125,8 +125,8 @@ const menuItem = [
     {
         title: '友站連結',
         subMenu: [
-            { title: 'Google', link: 'https://www.google.com' },
-            { title: 'GitHub', link: 'https://github.com' },
+            // { title: 'Google', link: 'https://www.google.com' },
+            // { title: 'GitHub', link: 'https://github.com' },
         ]
     }
 ]
