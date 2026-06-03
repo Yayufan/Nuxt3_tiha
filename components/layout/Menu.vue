@@ -19,17 +19,17 @@
                 <el-sub-menu index="friendly-links">
                     <template #title>友善連結</template>
 
-                    <!-- <a href="https://www.google.com" target="_blank">
-                        <el-menu-item index="link-google">Google</el-menu-item>
+                    <a href="http://tasid.org.tw/" target="_blank">
+                        <el-menu-item index="link-tasid">台灣腸道醫學會</el-menu-item>
                     </a>
 
-                    <a href="https://github.com" target="_blank">
-                        <el-menu-item index="link-github">GitHub</el-menu-item>
+                    <a href="https://www.dest.org.tw/" target="_blank">
+                        <el-menu-item index="link-dest">消化鏡內視鏡醫學會</el-menu-item>
                     </a>
 
-                    <a href="https://openai.com" target="_blank">
-                        <el-menu-item index="link-openai"> OpenAI</el-menu-item>
-                    </a> -->
+                    <a href="https://www.gest.org.tw/" target="_blank">
+                        <el-menu-item index="link-gest">消化系醫學會</el-menu-item>
+                    </a>
 
                 </el-sub-menu>
             </el-sub-menu>

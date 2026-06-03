@@ -125,8 +125,9 @@ const menuItem = [
     {
         title: '友站連結',
         subMenu: [
-            // { title: 'Google', link: 'https://www.google.com' },
-            // { title: 'GitHub', link: 'https://github.com' },
+            { title: '台灣腸道醫學會', link: 'http://tasid.org.tw/' },
+            { title: '消化鏡內視鏡醫學會', link: 'https://www.dest.org.tw/' },
+            { title: '消化系醫學會', link: 'https://www.gest.org.tw/' }
         ]
     }
 ]
