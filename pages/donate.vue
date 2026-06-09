@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="donation-info">
-                        <div>重要！！　請於捐款後請填寫<a class="donate-google-form" href="https://forms.gle/hWeAgq4dZYxom9uk6"> 捐款回報表單
+                        <div>重要！！　請於捐款後請填寫<a class="donate-google-form" href="https://docs.google.com/forms/d/e/1FAIpQLSerewHl4UudSF-rsCrNjikc6NKqUgIedz0dp4pz_e_NCfBKUQ/viewform?usp=send_form"> 捐款回報表單
                         </a>以便協會核對帳款並寄送收據與小禮物。</div>
                     </div>
 
